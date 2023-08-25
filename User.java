@@ -1,6 +1,6 @@
 public class User {
 
-    // Declaring variables: user ID, name, surname, email, gender, date of birth
+    // Declaring variables: user ID, name, surname, email, gender, date of birth.
     long user_id;
 
     String user_name;
