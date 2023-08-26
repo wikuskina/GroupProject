@@ -20,5 +20,36 @@ public class Main {
         System.out.println("Цена: " + item.getPrice());
         System.out.println("Количество: " + item.getAmount());
         System.out.println();
+
+        System.out.println("Раздел: " + puzzle.getName());
+        System.out.println("ID: " + puzzle.getId());
+        System.out.println("Цена: " + puzzle.getPrice());
+        System.out.println("Количество: " + puzzle.getAmount());
+        System.out.println();
+
+        System.out.println("Раздел: " + car.getName());
+        System.out.println("ID: " + car.getId());
+        System.out.println("Цена: " + car.getPrice());
+        System.out.println("Количество: " + car.getAmount());
+        System.out.println();
+
+        System.out.println("Раздел: " + constructor.getName());
+        System.out.println("ID: " + constructor.getId());
+        System.out.println("Цена: " + constructor.getPrice());
+        System.out.println("Количество: " + constructor.getAmount());
+        // 5 user
+        User user1 = new User(400, "Мария", "Савельева", "maria.savelieva@gmail.com", "женский", "15.06.2000");
+        user1.printToString();
+        User user2 = new User(401, "Елена", "Иванова", "elena.ivanove@gmail.com", "женский", "14.01.1998");
+        user2.printToString();
+        User user3 = new User(402, "Игорь", "Молев", "igor.molev@gmail.com", "мужской", "11.12.1991");
+        user3.printToString();
+        User user4 = new User(403, "Мелисса", "Белова", "melissa.white@gmail.com", "женский", "25.08.1983");
+        user4.printToString();
+        User user5 = new User(404, "Иван", "Черных", "ivan.black@gmail.com", "мужской", "08.07.2005");
+        user5.printToString();
+        // 25 items (toys)
+
     }
 }
+
