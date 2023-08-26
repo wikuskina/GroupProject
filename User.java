@@ -1,17 +1,11 @@
 public class User {
-
     // Declaring variables: user ID, name, surname, email, gender, date of birth.
-    long user_id;
-
-    String user_name;
-
-    String user_surname;
-
-    String user_email;
-
-    String user_gender;
-
-    String user_DOB;
+    private long user_id;
+    private String user_name;
+    private String user_surname;
+    private String user_email;
+    private String user_gender;
+    private String user_DOB;
 
     // Constructor empty
     public User() {
@@ -27,8 +21,25 @@ public class User {
         this.user_DOB = user_DOB;
     }
 
-    // Setter methods: to set / update value
+    // Output user to string
+    public void printToString() {
+        String str = "Пользаватель: ";
+        str += "id " + this.getUser_id() + ", Имя, Фамилия - " + this.getUser_name() + " " + this.getUser_surname();
+        // check if some fields are not empty
+        if (!this.getUser_email().isEmpty()) {
+            str += ", email - " + this.getUser_email();
+        }
+        if (!this.getUser_gender().isEmpty()) {
+            str += ", пол - " + this.getUser_gender();
+        }
+        if (!this.getUser_DOB().isEmpty()) {
+            str += ", дата рождения - " + this.getUser_DOB();
+        }
 
+        System.out.println(str);
+
+    }
+    // Setter methods: to set / update value
     public void setUser_id(long user_id) {
         this.user_id = user_id;
     }
