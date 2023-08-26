@@ -27,6 +27,22 @@ public class User {
         this.user_DOB = user_DOB;
     }
 
+    // Output user to string
+    public void printToString() {
+        String str = "Пользаватель: ";
+        str += "id " + this.getUser_id() + ", Имя, Фамилия - " + this.getUser_name() + " " + this.getUser_surname();
+        // check if some fields are not empty
+        if (!this.getUser_email().isEmpty()) {
+            str += ", email - " + this.getUser_email();
+        }
+        if (!this.getUser_gender().isEmpty()) {
+            str += ", пол - " + this.getUser_gender();
+        }
+        if (!this.getUser_DOB().isEmpty()) {
+            str += ", дата рождения - " + this.getUser_DOB();
+        }
+        System.out.println(str);
+    }
     // Setter methods: to set / update value
 
     public void setUser_id(long user_id) {
