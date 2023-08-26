@@ -6,37 +6,14 @@ public class Main {
         Item puzzle = new Item(3, "Пазлы", 15.0, 5);
         Item car = new Item(4, "Машинки", 25.0, 5);
         Item constructor = new Item(5, "Конструкторы", 30.0, 5);
-// функция для вывода информации по товарам
-        printItemInfo(ball);
-        printItemInfo(doll);
-        printItemInfo(puzzle);
-        printItemInfo(car);
-        printItemInfo(constructor);
-    }
+
 // вывод товаров в консоль с параметрами товаров
-    public static void printItemInfo(Item item) {
-        System.out.println("Раздел: " + item.getName());
-        System.out.println("ID: " + item.getId());
-        System.out.println("Цена: " + item.getPrice());
-        System.out.println("Количество: " + item.getAmount());
-        System.out.println();
+        ball.printItemInfo();
+        doll.printItemInfo();
+        puzzle.printItemInfo();
+        car.printItemInfo();
+        constructor.printItemInfo();
 
-        System.out.println("Раздел: " + puzzle.getName());
-        System.out.println("ID: " + puzzle.getId());
-        System.out.println("Цена: " + puzzle.getPrice());
-        System.out.println("Количество: " + puzzle.getAmount());
-        System.out.println();
-
-        System.out.println("Раздел: " + car.getName());
-        System.out.println("ID: " + car.getId());
-        System.out.println("Цена: " + car.getPrice());
-        System.out.println("Количество: " + car.getAmount());
-        System.out.println();
-
-        System.out.println("Раздел: " + constructor.getName());
-        System.out.println("ID: " + constructor.getId());
-        System.out.println("Цена: " + constructor.getPrice());
-        System.out.println("Количество: " + constructor.getAmount());
         // 5 user
         User user1 = new User(400, "Мария", "Савельева", "maria.savelieva@gmail.com", "женский", "15.06.2000");
         user1.printToString();
