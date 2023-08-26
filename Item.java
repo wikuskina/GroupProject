@@ -1,15 +1,17 @@
 public class Item {
     private long id;
-    private String name;
-    private Double price;
-    private long amount;
+    private String name; // наименование
+    private Double price; // цена
+    private long amount; // количество товаров на складе
 
+    // Пустой конструктор - нельзя создать, чтобы не было пустых товаров
     public Item() throws Exception{
         System.out.println("Нельзя создать пустой товар");
         throw new Exception();
     }
-
+    // Конструкторы (минимальный - с непустым id и непустым наименованием)
     public Item(long id, String name) throws Exception{
+        // check if
         if (id == 0) {
             System.out.println("id не может равнятся 0");
             throw new Exception();
@@ -22,6 +24,7 @@ public class Item {
         this.setName(name);
     }
 
+    // Конструктор (+ цена с проверкой на отрицательную)
     public Item(long id, String name, Double price) throws Exception{
         if (id == 0) {
             System.out.println("id не может равнятся 0");
@@ -40,6 +43,7 @@ public class Item {
         this.setPrice(price);
     }
 
+    //Конструктор (+ количество с проверкой на не 0)
     public Item(long id, String name, long amount) throws Exception{
         if (id == 0) {
             System.out.println("id не может равнятся 0");
@@ -59,6 +63,7 @@ public class Item {
         this.setAmount(amount);
     }
 
+    // Полный конструктор с проверками
     public Item(long id, String name, Double price, long amount) throws Exception{
         if (id == 0) {
             System.out.println("id не может равнятся 0");
@@ -83,6 +88,7 @@ public class Item {
         this.setAmount(amount);
     }
 
+    // Setters
     public void setId(long id) {
         this.id = id;
     }
@@ -99,6 +105,7 @@ public class Item {
         this.amount = amount;
     }
 
+    // Getters
     public long getId() {
         return id;
     }
