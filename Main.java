@@ -13,6 +13,19 @@ public class Main {
         puzzle.printItemInfo();
         car.printItemInfo();
         constructor.printItemInfo();
+// создание новых товаров
+        ball.create();
+        doll.create();
+        puzzle.create();
+        car.create();
+        constructor.create();
+// удаление товаров
+        ball.delete();
+        doll.delete();
+        puzzle.delete();
+        car.delete();
+        constructor.delete();
+
 
         // 5 user
         User user1 = new User(400, "Мария", "Савельева", "maria.savelieva@gmail.com", "женский", "15.06.2000");

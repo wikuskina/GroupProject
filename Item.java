@@ -1,4 +1,4 @@
-public class Item implements Create<Item> {
+public class Item implements Create, Delete {
     private long id;
     private String name; // наименование
     private Double price; // цена
@@ -129,8 +129,12 @@ public class Item implements Create<Item> {
         System.out.println("Количество: " + this.getAmount());
         System.out.println();
     }
-    public void create(Item entity) {
-        // реализация создания товара
-        System.out.println("Создание товара: " + entity.getName());
+    public void create() {
+        // создание товара
+        System.out.println("Создание товара: " + name);
+    }
+    public void delete() {
+        //удаление товаров
+        System.out.println("Удаление товара: " + name);
     }
 }

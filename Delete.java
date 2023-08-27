@@ -1,3 +1,3 @@
-public interface Delete<T> {
-    void delete(T entity);
+public interface Delete {
+    void delete();
 }

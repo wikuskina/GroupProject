@@ -1,3 +1,3 @@
-public interface Create<T> {
-    void create(T entity);
+public interface Create {
+    void create();
 }
