@@ -1,4 +1,4 @@
-public class Item {
+public class Item implements Create<Item> {
     private long id;
     private String name; // наименование
     private Double price; // цена
@@ -128,5 +128,9 @@ public class Item {
         System.out.println("Цена: " + this.getPrice());
         System.out.println("Количество: " + this.getAmount());
         System.out.println();
+    }
+    public void create(Item entity) {
+        // реализация создания товара
+        System.out.println("Создание товара: " + entity.getName());
     }
 }
