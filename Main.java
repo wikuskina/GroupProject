@@ -170,16 +170,16 @@ public class Main {
             System.out.println("Пользователь " + randomUser.getUser_name() + " " + randomUser.getUser_surname()
                     + " положил/a в корзину следующий товар: " + randomItem.getName() + ", ID товара: " + randomItem.getId());
         }
-            // реализация метода create и добавление в каталог
-            Item ballYellow = new Item(6, "Мяч желтый", 12.0, 5);
-            ballYellow.create();
-            System.out.println("Желтый мяч добавлен в каталог");
-            ballYellow.printItemInfo();
-            CatalogBalls.add(ballYellow.getName());
+        // реализация метода create и добавление в каталог
+        Item ballYellow = new Item(6, "Мяч желтый", 12.0, 5);
+        ballYellow.create();
+        System.out.println(ballYellow.getName() + " добавлен в каталог");
+        ballYellow.printItemInfo();
+        CatalogBalls.add(ballYellow.getName());
 
-            // реализация метода delete и удаление из каталога
-            ballYellow.delete();
-            CatalogBalls.remove(ballYellow.getName());
-            System.out.println("Желтый мяч удален из каталога");
-        }
+        // реализация метода delete и удаление из каталога
+        ballYellow.delete();
+        CatalogBalls.remove(ballYellow.getName());
+        System.out.println("Желтый мяч id=" + ballYellow.getId() + " удален из каталога");
     }
+}
