@@ -111,5 +111,8 @@ public class User {
     public void delete() {
         System.out.println("Удаление пользователя ");
     }
+    public void read() {
+        printToString();
+    }
 
 }

@@ -195,5 +195,9 @@ public class Main {
         user6.delete();
         allUsers.remove(user6);
         System.out.println("Пользователь " + user6.getUser_id() + " " + user6.user_name + " " + user6.user_surname + " удален из списка");
+
+        // реализация метода read о пользователе
+        user1.read();
     }
+
 }
