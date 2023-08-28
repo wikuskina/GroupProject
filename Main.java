@@ -32,80 +32,115 @@ public class Main {
         Item constructorVeryHard = new Item(5, "Конструктор очень сложный", 30.0, 5);
 
         // List of all items
-        ArrayList <Item> allItems = new ArrayList<>();
-        allItems.add(ballRed);allItems.add(ballBlue);allItems.add(ballWhite);allItems.add(ballGreen);allItems.add(ballBlack);
-        allItems.add(dollBarbie);allItems.add(dollCandy);allItems.add(dollMary);allItems.add(dollKim);allItems.add(dollNina);
-        allItems.add(puzzle5);allItems.add(puzzle4);allItems.add(puzzle3);allItems.add(puzzle2);allItems.add(puzzle1);
-        allItems.add(carGreen);allItems.add(carBlack);allItems.add(carYellow);allItems.add(carPink);allItems.add(carPurple);
-        allItems.add(constructorVeryEasy);allItems.add(constructorEasy);allItems.add(constructorMedium);allItems.add(constructorHard);allItems.add(constructorVeryHard);
+        ArrayList<Item> allItems = new ArrayList<>();
+        allItems.add(ballRed);
+        allItems.add(ballBlue);
+        allItems.add(ballWhite);
+        allItems.add(ballGreen);
+        allItems.add(ballBlack);
+        allItems.add(dollBarbie);
+        allItems.add(dollCandy);
+        allItems.add(dollMary);
+        allItems.add(dollKim);
+        allItems.add(dollNina);
+        allItems.add(puzzle5);
+        allItems.add(puzzle4);
+        allItems.add(puzzle3);
+        allItems.add(puzzle2);
+        allItems.add(puzzle1);
+        allItems.add(carGreen);
+        allItems.add(carBlack);
+        allItems.add(carYellow);
+        allItems.add(carPink);
+        allItems.add(carPurple);
+        allItems.add(constructorVeryEasy);
+        allItems.add(constructorEasy);
+        allItems.add(constructorMedium);
+        allItems.add(constructorHard);
+        allItems.add(constructorVeryHard);
 
         // Item lists by catalog (items added by type into each catalog)
         // Balls
-        ArrayList<String> CatalogBalls= new ArrayList<>();
-        CatalogBalls.add(ballRed.getName()); CatalogBalls.add(ballBlue.getName()); CatalogBalls.add(ballWhite.getName());
-        CatalogBalls.add(ballGreen.getName()); CatalogBalls.add(ballBlack.getName());
+        ArrayList<String> CatalogBalls = new ArrayList<>();
+        CatalogBalls.add(ballRed.getName());
+        CatalogBalls.add(ballBlue.getName());
+        CatalogBalls.add(ballWhite.getName());
+        CatalogBalls.add(ballGreen.getName());
+        CatalogBalls.add(ballBlack.getName());
 
         // Dolls
-        ArrayList<String> CatalogDolls= new ArrayList<>();
-        CatalogDolls.add(dollBarbie.getName()); CatalogDolls.add(dollCandy.getName()); CatalogDolls.add(dollMary.getName());
-        CatalogDolls.add(dollKim.getName()); CatalogDolls.add(dollNina.getName());
+        ArrayList<String> CatalogDolls = new ArrayList<>();
+        CatalogDolls.add(dollBarbie.getName());
+        CatalogDolls.add(dollCandy.getName());
+        CatalogDolls.add(dollMary.getName());
+        CatalogDolls.add(dollKim.getName());
+        CatalogDolls.add(dollNina.getName());
 
         // Puzzles
-        ArrayList<String> CatalogPuzzles= new ArrayList<>();
-        CatalogPuzzles.add(puzzle1.getName()); CatalogPuzzles.add(puzzle2.getName()); CatalogPuzzles.add(puzzle3.getName());
-        CatalogPuzzles.add(puzzle4.getName()); CatalogPuzzles.add(puzzle5.getName());
+        ArrayList<String> CatalogPuzzles = new ArrayList<>();
+        CatalogPuzzles.add(puzzle1.getName());
+        CatalogPuzzles.add(puzzle2.getName());
+        CatalogPuzzles.add(puzzle3.getName());
+        CatalogPuzzles.add(puzzle4.getName());
+        CatalogPuzzles.add(puzzle5.getName());
 
         // Cars
-        ArrayList<String> CatalogCars= new ArrayList<>();
-        CatalogCars.add(carGreen.getName()); CatalogCars.add(carBlack.getName()); CatalogCars.add(carYellow.getName());
-        CatalogCars.add(carPink.getName()); CatalogCars.add(carPurple.getName());
+        ArrayList<String> CatalogCars = new ArrayList<>();
+        CatalogCars.add(carGreen.getName());
+        CatalogCars.add(carBlack.getName());
+        CatalogCars.add(carYellow.getName());
+        CatalogCars.add(carPink.getName());
+        CatalogCars.add(carPurple.getName());
 
         // Constructors
-        ArrayList<String> CatalogConstructors= new ArrayList<>();
-        CatalogConstructors.add(constructorVeryEasy.getName()); CatalogConstructors.add(constructorEasy.getName()); CatalogConstructors.add(constructorMedium.getName());
-        CatalogConstructors.add(constructorHard.getName()); CatalogConstructors.add(constructorVeryHard.getName());
+        ArrayList<String> CatalogConstructors = new ArrayList<>();
+        CatalogConstructors.add(constructorVeryEasy.getName());
+        CatalogConstructors.add(constructorEasy.getName());
+        CatalogConstructors.add(constructorMedium.getName());
+        CatalogConstructors.add(constructorHard.getName());
+        CatalogConstructors.add(constructorVeryHard.getName());
 
         // 5 Catalogs types and items in them, using the above lists
         System.out.println("5 разделов каталога и товары в них:");
-       Catalog balls = new Catalog (28, "Мячи", CatalogBalls);
-       System.out.println(balls.getName() + ":" + balls.getItems());
-       Catalog dolls = new Catalog (29, "Куклы", CatalogDolls);
-       System.out.println(dolls.getName() + ":" + dolls.getItems());
-       Catalog puzzles = new Catalog (30, "Пазлы", CatalogPuzzles);
-       System.out.println(puzzles.getName() + ":" + puzzles.getItems());
-       Catalog cars = new Catalog (31, "Машинки", CatalogCars);
-       System.out.println(cars.getName() + ":" + cars.getItems());
-       Catalog constructors = new Catalog (32, "Конструкторы", CatalogConstructors);
-       System.out.println(constructors.getName() + ":" + constructors.getItems());
-       System.out.println();
+        Catalog balls = new Catalog(28, "Мячи", CatalogBalls);
+        System.out.println(balls.getName() + ":" + balls.getItems());
+        Catalog dolls = new Catalog(29, "Куклы", CatalogDolls);
+        System.out.println(dolls.getName() + ":" + dolls.getItems());
+        Catalog puzzles = new Catalog(30, "Пазлы", CatalogPuzzles);
+        System.out.println(puzzles.getName() + ":" + puzzles.getItems());
+        Catalog cars = new Catalog(31, "Машинки", CatalogCars);
+        System.out.println(cars.getName() + ":" + cars.getItems());
+        Catalog constructors = new Catalog(32, "Конструкторы", CatalogConstructors);
+        System.out.println(constructors.getName() + ":" + constructors.getItems());
+        System.out.println();
 
 // printing out all existing items (25) and their data
         System.out.println("Список всех товаров на складе:");
         ballRed.printItemInfo();
         ballBlue.printItemInfo();
-         ballWhite.printItemInfo();
-         ballBlack.printItemInfo();
-         ballGreen.printItemInfo();
-         dollBarbie.printItemInfo();
-         dollCandy.printItemInfo();
-         dollMary.printItemInfo();
-         dollKim.printItemInfo();
-         dollNina.printItemInfo();
-         puzzle1.printItemInfo();
-         puzzle2.printItemInfo();
-         puzzle3.printItemInfo();
-         puzzle4.printItemInfo();
-         puzzle5.printItemInfo();
-         carGreen.printItemInfo();
-         carBlack.printItemInfo();
-         carYellow.printItemInfo();
-         carPink.printItemInfo();
-         carPurple.printItemInfo();
-         constructorVeryEasy.printItemInfo();
-         constructorEasy.printItemInfo();
-         constructorMedium.printItemInfo();
-         constructorHard.printItemInfo();
-         constructorVeryHard.printItemInfo();
+        ballWhite.printItemInfo();
+        ballBlack.printItemInfo();
+        ballGreen.printItemInfo();
+        dollBarbie.printItemInfo();
+        dollCandy.printItemInfo();
+        dollMary.printItemInfo();
+        dollKim.printItemInfo();
+        dollNina.printItemInfo();
+        puzzle1.printItemInfo();
+        puzzle2.printItemInfo();
+        puzzle3.printItemInfo();
+        puzzle4.printItemInfo();
+        puzzle5.printItemInfo();
+        carGreen.printItemInfo();
+        carBlack.printItemInfo();
+        carYellow.printItemInfo();
+        carPink.printItemInfo();
+        carPurple.printItemInfo();
+        constructorVeryEasy.printItemInfo();
+        constructorEasy.printItemInfo();
+        constructorMedium.printItemInfo();
+        constructorHard.printItemInfo();
+        constructorVeryHard.printItemInfo();
 
 // создание новых товаров
 //        ball.create();
@@ -134,19 +169,21 @@ public class Main {
         user5.printToString();
 
         // List of all users
-        ArrayList <User> allUsers = new ArrayList<>();
-        allUsers.add(user1);allUsers.add(user2);allUsers.add(user3);allUsers.add(user4);allUsers.add(user5);
+        ArrayList<User> allUsers = new ArrayList<>();
+        allUsers.add(user1);
+        allUsers.add(user2);
+        allUsers.add(user3);
+        allUsers.add(user4);
+        allUsers.add(user5);
 
         // Random user actions using allUsers and allItems lists
         Random choices = new Random();
-        User randomUser = allUsers.get(choices.nextInt(allUsers.size()));
-        Item randomitem = allItems.get(choices.nextInt(allItems.size()));
-        System.out.println("Пользователь "+ randomUser.getUser_name() + " " + randomUser.getUser_surname()
-        + " положил/a в корзину следующий товар: " + randomitem.getName() + ", ID товара: " + randomitem.getId());
-
+        for (int i = 0; i < 5; i++) {
+            User randomUser = allUsers.get(choices.nextInt(allUsers.size()));
+            Item randomItem = allItems.get(choices.nextInt(allItems.size()));
+            System.out.println("Пользователь " + randomUser.getUser_name() + " " + randomUser.getUser_surname()
+                    + " положил/a в корзину следующий товар: " + randomItem.getName() + ", ID товара: " + randomItem.getId());
+        }
     }
-
-
-
 }
 
