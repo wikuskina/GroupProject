@@ -1,4 +1,3 @@
-
 import  java.util.ArrayList;
 public class Catalog {
     private int id;
@@ -13,6 +12,7 @@ public class Catalog {
     // пустой конструктор
     public Catalog() {
     }
+
     // геттеры и сеттеры
     public int getId() {
         return id;

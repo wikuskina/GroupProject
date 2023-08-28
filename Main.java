@@ -143,17 +143,17 @@ public class Main {
         constructorVeryHard.printItemInfo();
 
 // создание новых товаров
-//        ball.create();
-//        doll.create();
-//        puzzle.create();
-//        car.create();
-//        constructor.create();
-//// удаление товаров
-//        ball.delete();
-//        doll.delete();
-//        puzzle.delete();
-//        car.delete();
-//        constructor.delete();
+        // ball.create();
+        // doll.create();
+        // puzzle.create();
+        // car.create();
+        // constructor.create();
+// удаление товаров
+        // ball.delete();
+        // doll.delete();
+        // puzzle.delete();
+        // car.delete();
+        // constructor.delete();
 
 
         // 5 users
@@ -184,6 +184,9 @@ public class Main {
             System.out.println("Пользователь " + randomUser.getUser_name() + " " + randomUser.getUser_surname()
                     + " положил/a в корзину следующий товар: " + randomItem.getName() + ", ID товара: " + randomItem.getId());
         }
+        Item ballYellow = new Item(6, "Мяч желтый", 12.0, 3);
+        ballYellow.create();
+        System.out.println("Желтый мяч добавлен в каталог");
+        ballYellow.printItemInfo();
     }
 }
-

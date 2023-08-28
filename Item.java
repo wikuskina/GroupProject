@@ -133,6 +133,8 @@ public class Item implements Create, Delete {
         // создание товара
         System.out.println("Создание товара: " + name);
     }
+
+
     public void delete() {
         //удаление товаров
         System.out.println("Удаление товара: " + name);
