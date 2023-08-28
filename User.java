@@ -105,4 +105,7 @@ public class User {
                 ", user_DOB='" + user_DOB + '\'' +
                 '}';
     }
+    public void create() {
+        System.out.println("Добавление нового пользователя");
+    }
 }

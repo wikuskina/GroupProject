@@ -134,18 +134,18 @@ public class Item implements Create, Delete, Read {
         // создание товара
         System.out.println("Создание товара: " + name);
     }
-        @Override
-        public void delete() {
+    @Override
+    public void delete() {
         // удаление товара
-            System.out.println("Товар удален: " + getName());
-        }
+        System.out.println("Товар " + getName() + " " + getId() + " удален из каталога");
+    }
 
-        public void read() {
-            // Вывод информации о товаре
-            System.out.println("Информация о товаре:");
-            System.out.println("Название: " + name);
-            System.out.println("ID: " + id);
-            System.out.println("Цена: " + price);
-            System.out.println("Количество: " + amount);
+    public void read() {
+        // Вывод информации о товаре
+        System.out.println("Информация о товаре:");
+        System.out.println("Название: " + name);
+        System.out.println("ID: " + id);
+        System.out.println("Цена: " + price);
+        System.out.println("Количество: " + amount);
         }
     }
