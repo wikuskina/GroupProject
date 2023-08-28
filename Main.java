@@ -190,5 +190,10 @@ public class Main {
         user6.create();
         user6.printToString();
         allUsers.add(user6);
+
+        // реализация метода delete, удаление пользователя
+        user6.delete();
+        allUsers.remove(user6);
+        System.out.println("Пользователь " + user6.getUser_id() + " " + user6.user_name + " " + user6.user_surname + " удален из списка");
     }
 }

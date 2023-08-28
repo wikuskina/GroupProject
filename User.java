@@ -108,4 +108,8 @@ public class User {
     public void create() {
         System.out.println("Добавление нового пользователя");
     }
+    public void delete() {
+        System.out.println("Удаление пользователя ");
+    }
+
 }
