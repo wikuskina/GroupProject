@@ -1,4 +1,4 @@
-public class Item implements Create, Delete {
+public class Item implements Create, Delete, Read {
     private long id;
     private String name; // наименование
     private Double price; // цена
@@ -138,5 +138,14 @@ public class Item implements Create, Delete {
         public void delete() {
         // удаление товара
             System.out.println("Товар удален: " + getName());
+        }
+
+        public void read() {
+            // Вывод информации о товаре
+            System.out.println("Информация о товаре:");
+            System.out.println("Название: " + name);
+            System.out.println("ID: " + id);
+            System.out.println("Цена: " + price);
+            System.out.println("Количество: " + amount);
         }
     }

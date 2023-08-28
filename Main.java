@@ -181,5 +181,8 @@ public class Main {
         ballYellow.delete();
         CatalogBalls.remove(ballYellow.getName());
         System.out.println("Желтый мяч id=" + ballYellow.getId() + " удален из каталога");
+
+        // реализация метода read и выведение информации о товаре
+        ballBlack.read();
     }
 }
