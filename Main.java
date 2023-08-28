@@ -142,20 +142,6 @@ public class Main {
         constructorHard.printItemInfo();
         constructorVeryHard.printItemInfo();
 
-// создание новых товаров
-        // ball.create();
-        // doll.create();
-        // puzzle.create();
-        // car.create();
-        // constructor.create();
-// удаление товаров
-        // ball.delete();
-        // doll.delete();
-        // puzzle.delete();
-        // car.delete();
-        // constructor.delete();
-
-
         // 5 users
         User user1 = new User(400, "Мария", "Савельева", "maria.savelieva@gmail.com", "женский", "15.06.2000");
         user1.printToString();
@@ -184,9 +170,11 @@ public class Main {
             System.out.println("Пользователь " + randomUser.getUser_name() + " " + randomUser.getUser_surname()
                     + " положил/a в корзину следующий товар: " + randomItem.getName() + ", ID товара: " + randomItem.getId());
         }
-        Item ballYellow = new Item(6, "Мяч желтый", 12.0, 3);
+        // реализация метода create и добавление в каталог
+        Item ballYellow = new Item(6, "Мяч желтый", 12.0, 5);
         ballYellow.create();
         System.out.println("Желтый мяч добавлен в каталог");
         ballYellow.printItemInfo();
+        CatalogBalls.add(ballYellow.getName());
     }
 }
