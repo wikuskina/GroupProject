@@ -93,4 +93,16 @@ public class User {
     public String getUser_DOB() {
         return user_DOB;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "user_id=" + user_id +
+                ", user_name='" + user_name + '\'' +
+                ", user_surname='" + user_surname + '\'' +
+                ", user_email='" + user_email + '\'' +
+                ", user_gender='" + user_gender + '\'' +
+                ", user_DOB='" + user_DOB + '\'' +
+                '}';
+    }
 }

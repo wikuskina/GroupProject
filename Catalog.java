@@ -3,12 +3,12 @@ import  java.util.ArrayList;
 public class Catalog {
     private int id;
     private String name;
-    private ArrayList<Item> items;
+    public ArrayList<String> catalogItems; // добавила создание списка, поменяла доступ public
 
-    public Catalog(int id, String name, ArrayList <Item> items) {
+    public Catalog(int id, String name, ArrayList <String> catalogItems) {
         this.id = id;
         this.name = name;
-        this.items = items;
+        this.catalogItems = catalogItems;
     }
     // пустой конструктор
     public Catalog() {
@@ -26,10 +26,20 @@ public class Catalog {
         public void setName(String name) {
         this.name = name;
         }
-        public ArrayList<Item> getItems() {
-        return items;
+        public ArrayList<String> getItems() {
+        return catalogItems;
         }
-        public void setToys(ArrayList<Item> items) {
-        this.items = items;
+        public void setItems(ArrayList<String> catalogItems) {
+        this.catalogItems = catalogItems;
         }
+
+    @Override
+    public String toString() {
+        return "Catalog{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", catalogItems=" + catalogItems +
+                '}';
     }
+}
+

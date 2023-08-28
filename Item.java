@@ -123,10 +123,10 @@ public class Item implements Create, Delete {
     }
 
     public void printItemInfo() {
-        System.out.println("Раздел: " + this.getName());
+        System.out.println("Название товара: " + this.getName());
         System.out.println("ID: " + this.getId());
         System.out.println("Цена: " + this.getPrice());
-        System.out.println("Количество: " + this.getAmount());
+        System.out.println("Количество на складе: " + this.getAmount());
         System.out.println();
     }
     public void create() {
