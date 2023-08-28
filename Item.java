@@ -129,14 +129,14 @@ public class Item implements Create, Delete {
         System.out.println("Количество на складе: " + this.getAmount());
         System.out.println();
     }
+    @Override
     public void create() {
         // создание товара
         System.out.println("Создание товара: " + name);
     }
-
-
-    public void delete() {
-        //удаление товаров
-        System.out.println("Удаление товара: " + name);
+        @Override
+        public void delete() {
+        // удаление товара
+            System.out.println("Товар удален: " + getName());
+        }
     }
-}
