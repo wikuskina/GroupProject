@@ -65,10 +65,18 @@ public class Catalog implements Update {
 
     }
 
+    // reading info about catalog
     public void read() {
         System.out.println("Информация о каталоге:");
         System.out.println("Название: " + name);
         System.out.println("ID: " + id);
+        System.out.println();
+    }
+
+    // clearning of catalog items
+    public void delete() {
+        catalogItems.clear(); // clear the list
+        System.out.println("Каталог " + getName() + " " + getId() + " успешно удален.");
         System.out.println();
     }
 }

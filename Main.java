@@ -218,8 +218,10 @@ public class Main {
         balls.read();
 
         // UPDATE method for Catalog
+        //books.update();
 
         // DELETE methods for Catalog
+        books.delete();
 
         // Random user actions using allUsers and allItems lists
         Random choices = new Random();
