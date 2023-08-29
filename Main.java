@@ -114,7 +114,7 @@ public class Main {
         System.out.println(constructors.getName() + ":" + constructors.getItems());
         System.out.println();
 
-        // printing out all existing items (25) and their data
+// printing out all existing items (25) and their data
         System.out.println("Список всех товаров на складе:");
         ballRed.printItemInfo();
         ballBlue.printItemInfo();
@@ -162,6 +162,27 @@ public class Main {
         allUsers.add(user4);
         allUsers.add(user5);
 
+        // CRUD methods for Items
+        // CREATE method for Items
+
+        // READ method for Items
+
+        // DELETE method for Items
+        ballWhite.delete();
+        CatalogBalls.remove(ballWhite.getName());
+        System.out.println("Белый мяч id=" + ballWhite.getId() + " удален из каталога");
+
+        // CRUD methods for Users
+        // CREATE methods for Users
+        // READ methods for Users
+        // DELETE methods for Users
+
+        // CRUD methods for Catalog
+        // CREATE methods for Catalog
+        // READ methods for Catalog
+        // DELETE methods for Catalog
+
+
         // Random user actions using allUsers and allItems lists
         Random choices = new Random();
         for (int i = 0; i < 5; i++) {
@@ -198,29 +219,6 @@ public class Main {
 
         // реализация метода read о пользователе
         user1.read();
-
-        // реализация update
-        System.out.println("Начинаем изменение товара");
-        ballRed.toString();
-        System.out.println("Изменим данные по товару");
-        ArrayList updateItem = new ArrayList(List.of((long)2, "Мяч красно-синий", (Double)15.0, (long)10));
-        ballRed.update(updateItem);
-        ballRed.toString();
-
-        System.out.println("Начинаем изменение пользователя");
-        user1.toString();
-        System.out.println("Изменим данные по пользователю");
-        ArrayList updateUser = new ArrayList(List.of((long)400, "Мария", "Савельева", "maria.savelieva@gmail.com", "женский", "15.06.2000"));
-        user1.update(updateUser);
-        user1.toString();
-
-        System.out.println("Начинаем изменение каталога");
-        balls.toString();
-        System.out.println("Изменим данные по каталогу");
-        ArrayList<String> newInItems = new ArrayList<String>(List.of(ballYellow.getName(), ballRed.getName()));
-        ArrayList updateCatalog = new ArrayList(List.of((int)35, "Мячи", newInItems));
-        balls.update(updateCatalog);
-        balls.toString();
     }
 
 }

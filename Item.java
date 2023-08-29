@@ -135,7 +135,7 @@ public class Item implements Create, Delete, Update, Read {
     @Override
     public void create() {
         // создание товара
-        System.out.println("Создание товара: " + name);
+        System.out.println("Создание товара: " + name + " ID: " + id);
     }
     @Override
     public void delete() {
