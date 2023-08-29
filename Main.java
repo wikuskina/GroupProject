@@ -198,6 +198,18 @@ public class Main {
 
         // реализация метода read о пользователе
         user1.read();
+
+        // реализация update
+        System.out.println("Начинаем изменение товара");
+        ballRed.toString();
+        System.out.println("Изменим данные по товару");
+        ArrayList updateItem = new ArrayList();
+        updateItem.add((long)2);
+        updateItem.add("Мяч красно-синий");
+        updateItem.add((Double)15.0);
+        updateItem.add((long)10);
+        ballRed.update(updateItem);
+        ballRed.toString();
     }
 
 }

@@ -1,4 +1,7 @@
-public class Item implements Create, Delete, Read {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Item implements Create, Delete, Update, Read {
     private long id;
     private String name; // наименование
     private Double price; // цена
@@ -147,5 +150,21 @@ public class Item implements Create, Delete, Read {
         System.out.println("ID: " + id);
         System.out.println("Цена: " + price);
         System.out.println("Количество: " + amount);
-        }
     }
+
+    @Override
+    public String toString(){
+        return "Название товара: " + this.getName() + "\nID: " + this.getId() +
+                "\nЦена: " + this.getPrice() + "\nКоличество на складе: " +
+                this.getAmount();
+    }
+
+    @Override
+    public void update(ArrayList updateItem){
+        this.setId((long)updateItem.get(0));
+        this.setName((String)updateItem.get(1));
+        this.setPrice((Double)updateItem.get(2));
+        this.setAmount((long)updateItem.get(3));
+        System.out.println("Запись про товар обновлена на " + this.toString());
+    }
+}
