@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Catalog implements Update {
+public class Catalog implements Create, Read, Update, Delete {
     private int id;
     private String name;
     public ArrayList<String> catalogItems; // добавила создание списка, поменяла доступ public
