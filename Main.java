@@ -114,7 +114,7 @@ public class Main {
         System.out.println(constructors.getName() + ":" + constructors.getItems());
         System.out.println();
 
-// printing out all existing items (25) and their data
+        // printing out all existing items (25) and their data
         System.out.println("Список всех товаров на складе:");
         ballRed.printItemInfo();
         ballBlue.printItemInfo();
@@ -203,13 +203,16 @@ public class Main {
         System.out.println("Начинаем изменение товара");
         ballRed.toString();
         System.out.println("Изменим данные по товару");
-        ArrayList updateItem = new ArrayList();
-        updateItem.add((long)2);
-        updateItem.add("Мяч красно-синий");
-        updateItem.add((Double)15.0);
-        updateItem.add((long)10);
+        ArrayList updateItem = new ArrayList(List.of((long)2, "Мяч красно-синий", (Double)15.0, (long)10));
         ballRed.update(updateItem);
         ballRed.toString();
+
+        System.out.println("Начинаем изменение пользователя");
+        user1.toString();
+        System.out.println("Изменим данные по пользователю");
+        ArrayList updateUser = new ArrayList(List.of((long)400, "Мария", "Савельева", "maria.savelieva@gmail.com", "женский", "15.06.2000"));
+        user1.update(updateUser);
+        user1.toString();
     }
 
 }

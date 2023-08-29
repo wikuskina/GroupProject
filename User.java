@@ -1,4 +1,6 @@
-public class User {
+import java.util.ArrayList;
+
+public class User implements Create, Read, Update, Delete {
 
     // Declaring variables: user ID, name, surname, email, gender, date of birth.
     long user_id;
@@ -115,4 +117,14 @@ public class User {
         printToString();
     }
 
+    @Override
+    public void update(ArrayList updateItem){
+        this.setUser_id((long)updateItem.get(0));
+        this.setUser_name((String)updateItem.get(1));
+        this.setUser_surname((String)updateItem.get(2));
+        this.setUser_email((String)updateItem.get(3));
+        this.setUser_gender((String)updateItem.get(3));
+        this.setUser_DOB((String)updateItem.get(3));
+        System.out.println("Запись про пользователя обновлена на " + this.toString());
+    }
 }
