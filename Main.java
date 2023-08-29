@@ -214,9 +214,12 @@ public class Main {
         books.create(); // creating catalog
 
         // READ methods for Catalog
-        // UPDATE method for Catalog
-        // DELETE methods for Catalog
+        books.read();
+        balls.read();
 
+        // UPDATE method for Catalog
+
+        // DELETE methods for Catalog
 
         // Random user actions using allUsers and allItems lists
         Random choices = new Random();
@@ -225,7 +228,6 @@ public class Main {
             Item randomItem = allItems.get(choices.nextInt(allItems.size()));
             System.out.println("Пользователь " + randomUser.getUser_name() + " " + randomUser.getUser_surname()
                     + " положил/a в корзину следующий товар: " + randomItem.getName() + ", ID товара: " + randomItem.getId());
-            System.out.println();
         }
 
     }

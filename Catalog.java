@@ -64,5 +64,12 @@ public class Catalog implements Update {
         System.out.println();
 
     }
+
+    public void read() {
+        System.out.println("Информация о каталоге:");
+        System.out.println("Название: " + name);
+        System.out.println("ID: " + id);
+        System.out.println();
+    }
 }
 
