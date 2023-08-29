@@ -141,7 +141,7 @@ public class Item implements Create, Delete, Update, Read {
     @Override
     public void delete() {
         // удаление товара
-        System.out.println("Товар " + getName() + " " + getId() + " удален из каталога");
+        System.out.println("Товар " + getName() + " " + getId() + " успешно удален из каталога");
         System.out.println();
     }
 

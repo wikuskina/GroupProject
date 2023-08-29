@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.*;
+import java.util.Random;
 
 public class Main {
 
@@ -166,23 +166,33 @@ public class Main {
         // CREATE method for Item - adding item to catalog / new item
         Item ballYellow = new Item(6, "Мяч желтый", 12.0, 5);
         ballYellow.create();
-        System.out.println(ballYellow.getName() + " успешно добавлен в каталог");
+        CatalogBalls.add(ballYellow.getName()); // adding to lists
+        allItems.add(ballYellow);
 
         // READ method for Items - reading information about any existing item
         ballRed.read();
         ballBlack.read();
         ballGreen.read();
 
-        // DELETE method for Items
+        // DELETE method for Items - deleting any item
         ballWhite.delete();
         CatalogBalls.remove(ballWhite.getName()); // deleting from lists
         allItems.remove(ballWhite);
-        System.out.println("Белый мяч" + ballWhite.getId() + " успешно удален из каталога");
 
         // CRUD methods for Users
-        // CREATE methods for Users
-        // READ methods for Users
+        // CREATE method for Users
+        User user6 = new User(405, "Александр", "Пушкин", "alex.pushkin@mail.ru", "мужской", "06.07.1799");
+        user6.create();
+        allUsers.add(user6); // adding to list of users
+        user6.printToString();
+        System.out.println();
+
+        // READ method for Users
+        user1.read();
+
         // DELETE methods for Users
+        user6.delete();
+        allUsers.remove(user6);
 
         // CRUD methods for Catalog
         // CREATE methods for Catalog
@@ -200,27 +210,6 @@ public class Main {
             System.out.println();
         }
 
-        // реализация метода delete и удаление товара из каталога
-        ballYellow.delete();
-        CatalogBalls.remove(ballYellow.getName());
-        System.out.println("Желтый мяч id=" + ballYellow.getId() + " удален из каталога");
-
-        // реализация метода read и выведение информации о товаре
-        ballBlack.read();
-
-        // реализация метода create и добавление пользователя
-        User user6 = new User(405, "Александр", "Пушкин", "alex.pushkin@mail.ru", "мужской", "06.07.1799");
-        user6.create();
-        user6.printToString();
-        allUsers.add(user6);
-
-        // реализация метода delete, удаление пользователя
-        user6.delete();
-        allUsers.remove(user6);
-        System.out.println("Пользователь " + user6.getUser_id() + " " + user6.user_name + " " + user6.user_surname + " удален из списка");
-
-        // реализация метода read о пользователе
-        user1.read();
     }
 
 }

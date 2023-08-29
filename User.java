@@ -107,24 +107,31 @@ public class User implements Create, Read, Update, Delete {
                 ", user_DOB='" + user_DOB + '\'' +
                 '}';
     }
+
     public void create() {
         System.out.println("Добавление нового пользователя");
+        System.out.println();
     }
+
     public void delete() {
-        System.out.println("Удаление пользователя ");
+        System.out.println("Пользователь " + user_name + user_surname
+                + "по ID: " + user_id + "успешно удален.");
+        System.out.println();
     }
+
     public void read() {
         printToString();
     }
 
     @Override
-    public void update(ArrayList updateItem){
-        this.setUser_id((long)updateItem.get(0));
-        this.setUser_name((String)updateItem.get(1));
-        this.setUser_surname((String)updateItem.get(2));
-        this.setUser_email((String)updateItem.get(3));
-        this.setUser_gender((String)updateItem.get(4));
-        this.setUser_DOB((String)updateItem.get(5));
+    public void update(ArrayList updateItem) {
+        this.setUser_id((long) updateItem.get(0));
+        this.setUser_name((String) updateItem.get(1));
+        this.setUser_surname((String) updateItem.get(2));
+        this.setUser_email((String) updateItem.get(3));
+        this.setUser_gender((String) updateItem.get(4));
+        this.setUser_DOB((String) updateItem.get(5));
         System.out.println("Запись про пользователя обновлена на " + this.toString());
+        System.out.println();
     }
 }
