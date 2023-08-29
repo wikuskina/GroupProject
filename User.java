@@ -123,8 +123,8 @@ public class User implements Create, Read, Update, Delete {
         this.setUser_name((String)updateItem.get(1));
         this.setUser_surname((String)updateItem.get(2));
         this.setUser_email((String)updateItem.get(3));
-        this.setUser_gender((String)updateItem.get(3));
-        this.setUser_DOB((String)updateItem.get(3));
+        this.setUser_gender((String)updateItem.get(4));
+        this.setUser_DOB((String)updateItem.get(5));
         System.out.println("Запись про пользователя обновлена на " + this.toString());
     }
 }

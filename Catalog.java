@@ -1,5 +1,5 @@
 import  java.util.ArrayList;
-public class Catalog {
+public class Catalog implements Update{
     private int id;
     private String name;
     public ArrayList<String> catalogItems; // добавила создание списка, поменяла доступ public
@@ -40,6 +40,14 @@ public class Catalog {
                 ", name='" + name + '\'' +
                 ", catalogItems=" + catalogItems +
                 '}';
+    }
+
+    @Override
+    public void update(ArrayList updateItem){
+        this.setId((int)updateItem.get(0));
+        this.setName((String)updateItem.get(1));
+        this.setItems((ArrayList<String>)updateItem.get(2));
+        System.out.println("Запись про товар обновлена на " + this.toString());
     }
 }
 

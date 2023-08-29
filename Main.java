@@ -213,6 +213,14 @@ public class Main {
         ArrayList updateUser = new ArrayList(List.of((long)400, "Мария", "Савельева", "maria.savelieva@gmail.com", "женский", "15.06.2000"));
         user1.update(updateUser);
         user1.toString();
+
+        System.out.println("Начинаем изменение каталога");
+        balls.toString();
+        System.out.println("Изменим данные по каталогу");
+        ArrayList<String> newInItems = new ArrayList<String>(List.of(ballYellow.getName(), ballRed.getName()));
+        ArrayList updateCatalog = new ArrayList(List.of((int)35, "Мячи", newInItems));
+        balls.update(updateCatalog);
+        balls.toString();
     }
 
 }
