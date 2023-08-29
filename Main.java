@@ -174,6 +174,9 @@ public class Main {
         ballBlack.read();
         ballGreen.read();
 
+        // UPDATE method for Items
+        //ballWhite.update();
+
         // DELETE method for Items - deleting any item
         ballWhite.delete();
         CatalogBalls.remove(ballWhite.getName()); // deleting from lists
@@ -190,13 +193,28 @@ public class Main {
         // READ method for Users
         user1.read();
 
+        // UPDATE method for Users
+        //user1.update();
+
         // DELETE methods for Users
         user6.delete();
         allUsers.remove(user6);
 
         // CRUD methods for Catalog
         // CREATE methods for Catalog
+        // Creating new items (books) and new catalog for it
+        Item book1 = new Item(199, "Марк Твен — Приключения Тома Сойера", 10.0, 25);
+        Item book2 = new Item(200, "Голдинг Уильям - Повелитель мух", 10.0, 15);
+        Item book3 = new Item(201, "Андерсен — Сказки", 10.0, 20);
+        ArrayList<String> CatalogBooks= new ArrayList<>();
+        CatalogBooks.add(book1.getName()); // adding new items to the list
+        CatalogBooks.add(book2.getName());
+        CatalogBooks.add(book3.getName());
+        Catalog books = new Catalog(33, "Книги", CatalogBooks);
+        books.create(); // creating catalog
+
         // READ methods for Catalog
+        // UPDATE method for Catalog
         // DELETE methods for Catalog
 
 

@@ -56,5 +56,13 @@ public class Catalog implements Update {
         this.setItems((ArrayList<String>) updateItem.get(2));
         System.out.println("Запись про товар обновлена на " + this.toString());
     }
+
+    public void create() {
+        // создание каталога
+        System.out.println("Создание нового каталога: " + name + " ID: " + id);
+        System.out.println("В каталоге " + name + " имеются следующие предметы: " + catalogItems);
+        System.out.println();
+
+    }
 }
 
