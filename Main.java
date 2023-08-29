@@ -163,14 +163,21 @@ public class Main {
         allUsers.add(user5);
 
         // CRUD methods for Items
-        // CREATE method for Items
+        // CREATE method for Item - adding item to catalog / new item
+        Item ballYellow = new Item(6, "Мяч желтый", 12.0, 5);
+        ballYellow.create();
+        System.out.println(ballYellow.getName() + " успешно добавлен в каталог");
 
-        // READ method for Items
+        // READ method for Items - reading information about any existing item
+        ballRed.read();
+        ballBlack.read();
+        ballGreen.read();
 
         // DELETE method for Items
         ballWhite.delete();
-        CatalogBalls.remove(ballWhite.getName());
-        System.out.println("Белый мяч id=" + ballWhite.getId() + " удален из каталога");
+        CatalogBalls.remove(ballWhite.getName()); // deleting from lists
+        allItems.remove(ballWhite);
+        System.out.println("Белый мяч" + ballWhite.getId() + " успешно удален из каталога");
 
         // CRUD methods for Users
         // CREATE methods for Users
@@ -190,13 +197,8 @@ public class Main {
             Item randomItem = allItems.get(choices.nextInt(allItems.size()));
             System.out.println("Пользователь " + randomUser.getUser_name() + " " + randomUser.getUser_surname()
                     + " положил/a в корзину следующий товар: " + randomItem.getName() + ", ID товара: " + randomItem.getId());
+            System.out.println();
         }
-        // реализация метода create и добавление товара в каталог
-        Item ballYellow = new Item(6, "Мяч желтый", 12.0, 5);
-        ballYellow.create();
-        System.out.println(ballYellow.getName() + " добавлен в каталог");
-        ballYellow.printItemInfo();
-        CatalogBalls.add(ballYellow.getName());
 
         // реализация метода delete и удаление товара из каталога
         ballYellow.delete();

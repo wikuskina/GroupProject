@@ -136,11 +136,13 @@ public class Item implements Create, Delete, Update, Read {
     public void create() {
         // создание товара
         System.out.println("Создание товара: " + name + " ID: " + id);
+        System.out.println();
     }
     @Override
     public void delete() {
         // удаление товара
         System.out.println("Товар " + getName() + " " + getId() + " удален из каталога");
+        System.out.println();
     }
 
     public void read() {
@@ -150,6 +152,7 @@ public class Item implements Create, Delete, Update, Read {
         System.out.println("ID: " + id);
         System.out.println("Цена: " + price);
         System.out.println("Количество: " + amount);
+        System.out.println();
     }
 
     @Override
