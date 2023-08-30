@@ -235,27 +235,24 @@ public class Main {
 
 
         // реализация update
-        System.out.println("Начинаем изменение товара");
-        ballRed.toString();
-        System.out.println("Изменим данные по товару");
-        ArrayList updateItem = new ArrayList(List.of((long)2, "Мяч красно-синий", (Double)15.0, (long)10));
+        System.out.println("Начинаем изменение товара " + ballRed.toString());
+        ArrayList<Item> updateItem = new ArrayList(List.of((long)2, "Мяч красно-синий", (Double)15.0, (long)10));
         ballRed.update(updateItem);
-        ballRed.toString();
+        System.out.println("Данные по игрушке изменились: " + ballRed.toString());
 
-        System.out.println("Начинаем изменение пользователя");
-        user1.toString();
+        System.out.println("Начинаем изменение пользователя - " + user1.toString());
         System.out.println("Изменим данные по пользователю");
-        ArrayList updateUser = new ArrayList(List.of((long)400, "Мария", "Соколова", "maria.sokolova@gmail.com", "женский", "15.06.2000"));
+        ArrayList<User> updateUser = new ArrayList(List.of((long)400, "Мария", "Соколова", "maria.sokolova@gmail.com", "женский", "15.06.2000"));
         user1.update(updateUser);
-        user1.toString();
+        System.out.println("Данные по пользователю изменились: " + user1.toString());
 
-        System.out.println("Начинаем изменение каталога");
-        balls.toString();
-        System.out.println("Изменим данные по каталогу");
+        System.out.println("Начинаем изменение каталога " + balls.toString());
         ArrayList<String> newInItems = new ArrayList<String>(List.of(ballYellow.getName(), ballRed.getName()));
-        ArrayList updateCatalog = new ArrayList(List.of((int)35, "Мячи", newInItems));
+        ArrayList<Catalog> updateCatalog = new ArrayList(List.of((int)35, "Мячи", newInItems));
         balls.update(updateCatalog);
-        balls.toString();
+        System.out.println("Данные по каталогу изменились: " + balls.toString());
+
+
 
     }
 
