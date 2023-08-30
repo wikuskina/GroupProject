@@ -70,11 +70,26 @@ public class Catalog implements Create, Read, Update, Delete {
     }
 
     public void create() {
-        // создание каталога
-        System.out.println("Создание нового каталога: " + name + " ID: " + id);
-        System.out.println("В каталоге " + name + " имеются следующие предметы: " + catalogItems);
-        System.out.println();
+        try {
+            if (0 <= id) {
+                System.out.println("ID не может быть отрицательным");
+                throw new IllegalArgumentException();
+            }
+            if (name.isEmpty()) {
+                System.out.println("Имя не может быть пустым");
+                throw new IllegalArgumentException();
+            }
+            if (catalogItems.isEmpty()) {
+                System.out.println("Каталог предметов не может быть пустым");
+                throw new IllegalArgumentException();
+            }
 
+            System.out.println("Создание нового каталога: " + name + " ID: " + id);
+            System.out.println("В каталоге " + name + " имеются следующие товары: " + catalogItems);
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println("Ошибка при создании каталога: " + e.getMessage());
+        }
     }
 
     // reading info about catalog
