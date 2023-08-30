@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Item implements Create, Delete, Update, Read {
@@ -163,11 +164,19 @@ public class Item implements Create, Delete, Update, Read {
     }
 
     @Override
-    public void update(ArrayList updateItem){
-        this.setId((long)updateItem.get(0));
-        this.setName((String)updateItem.get(1));
-        this.setPrice((Double)updateItem.get(2));
-        this.setAmount((long)updateItem.get(3));
+    public void update(HashMap<String, Object> updateItem){
+        if ((updateItem.containsKey("id")) && ((long)updateItem.get("id") > 0)) {
+            this.setId((long)updateItem.get("id"));
+        }
+        if ((updateItem.containsKey("name")) && ((String)updateItem.get("name") != null)) {
+            this.setName((String)updateItem.get("name"));
+        }
+        if ((updateItem.containsKey("price")) && ((Double)updateItem.get("price") > 0)) {
+            this.setPrice((Double)updateItem.get("price"));
+        }
+        if ((updateItem.containsKey("amount")) && ((long)updateItem.get("amount") > 0)) {
+            this.setAmount((long)updateItem.get("amount"));
+        }
         System.out.println("Запись про товар обновлена на " + this.toString());
     }
 }

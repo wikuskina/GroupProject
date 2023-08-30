@@ -1,8 +1,7 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 public interface Update {
-    default void update(ArrayList<Object> updateThis){
+    default void update(HashMap<String, Object> updateThis){
         System.out.println("Обновлена позиция " + this.toString());
     }
 

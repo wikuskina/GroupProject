@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Catalog implements Create, Read, Update, Delete {
     private int id;
@@ -50,10 +51,16 @@ public class Catalog implements Create, Read, Update, Delete {
     }
 
     @Override
-    public void update(ArrayList updateItem) {
-        this.setId((int) updateItem.get(0));
-        this.setName((String) updateItem.get(1));
-        this.setItems((ArrayList<String>) updateItem.get(2));
+    public void update(HashMap<String, Object> updateItem) {
+        if ((updateItem.containsKey("id")) && ((int)updateItem.get("id") > 0)) {
+            this.setId((int)updateItem.get("id"));
+        }
+        if ((updateItem.containsKey("name")) && ((String)updateItem.get("name") != null)) {
+            this.setName((String)updateItem.get("name"));
+        }
+        if ((updateItem.containsKey("catalogItems")) && (updateItem.get("catalogItems") != null)) {
+            this.setItems((ArrayList<String>)updateItem.get("catalogItems"));
+        }
         System.out.println("Запись про товар обновлена на " + this.toString());
     }
 

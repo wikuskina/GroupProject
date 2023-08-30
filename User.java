@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class User implements Create, Read, Update, Delete {
 
@@ -124,13 +125,25 @@ public class User implements Create, Read, Update, Delete {
     }
 
     @Override
-    public void update(ArrayList updateItem) {
-        this.setUser_id((long) updateItem.get(0));
-        this.setUser_name((String) updateItem.get(1));
-        this.setUser_surname((String) updateItem.get(2));
-        this.setUser_email((String) updateItem.get(3));
-        this.setUser_gender((String) updateItem.get(4));
-        this.setUser_DOB((String) updateItem.get(5));
+    public void update(HashMap<String, Object> updateItem) {
+        if ((updateItem.containsKey("user_id")) && ((long)updateItem.get("user_id") > 0)) {
+            this.setUser_id((long)updateItem.get("user_id"));
+        }
+        if ((updateItem.containsKey("user_name")) && ((String)updateItem.get("user_name") != null)) {
+            this.setUser_name((String)updateItem.get("user_name"));
+        }
+        if ((updateItem.containsKey("user_surname")) && ((String)updateItem.get("user_surname") != null)) {
+            this.setUser_surname((String)updateItem.get("user_surname"));
+        }
+        if ((updateItem.containsKey("user_email")) && ((String)updateItem.get("user_email") != null)) {
+            this.setUser_email((String)updateItem.get("user_email"));
+        }
+        if ((updateItem.containsKey("user_gender")) && ((String)updateItem.get("user_gender") != null)) {
+            this.setUser_gender((String)updateItem.get("user_gender"));
+        }
+        if ((updateItem.containsKey("user_DOB")) && ((String)updateItem.get("user_DOB") != null)) {
+            this.setUser_DOB((String)updateItem.get("user_DOB"));
+        }
         System.out.println("Запись про пользователя обновлена на " + this.toString());
         System.out.println();
     }
