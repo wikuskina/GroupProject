@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class User implements Create, Read, Update, Delete {
 
@@ -126,25 +127,47 @@ public class User implements Create, Read, Update, Delete {
 
     @Override
     public void update(HashMap<String, Object> updateItem) {
-        if ((updateItem.containsKey("user_id")) && ((long)updateItem.get("user_id") > 0)) {
-            this.setUser_id((long)updateItem.get("user_id"));
+        try {
+            if ((updateItem.containsKey("user_id")) && ((long)updateItem.get("user_id") > 0)) {
+                this.setUser_id((long)updateItem.get("user_id"));
+            } else if ((updateItem.containsKey("user_id"))) {
+                System.out.println("ID не может быть отрицательным");
+                throw new Exception();
+            }
+            if ((updateItem.containsKey("user_name")) && (!Objects.equals((String) updateItem.get("user_name"), ""))) {
+                this.setUser_name((String)updateItem.get("user_name"));
+            } else if ((updateItem.containsKey("user_name"))) {
+                System.out.println("Имя не может быть пустым");
+                throw new Exception();
+            }
+            if ((updateItem.containsKey("user_surname")) && (!Objects.equals((String) updateItem.get("user_surname"), ""))) {
+                this.setUser_surname((String)updateItem.get("user_surname"));
+            } else if ((updateItem.containsKey("user_surname"))) {
+                System.out.println("Фамилия не может быть пустой");
+                throw new Exception();
+            }
+            if ((updateItem.containsKey("user_email")) && (!Objects.equals((String) updateItem.get("user_email"), ""))) {
+                this.setUser_email((String)updateItem.get("user_email"));
+            } else if ((updateItem.containsKey("user_email"))) {
+                System.out.println("E-Mail не может быть пустым");
+                throw new Exception();
+            }
+            if ((updateItem.containsKey("user_gender")) && (!Objects.equals((String) updateItem.get("user_gender"), ""))) {
+                this.setUser_gender((String)updateItem.get("user_gender"));
+            } else if ((updateItem.containsKey("user_gender"))) {
+                System.out.println("Пол не может быть пустым");
+                throw new Exception();
+            }
+            if ((updateItem.containsKey("user_DOB")) && (!Objects.equals((String) updateItem.get("user_DOB"), ""))) {
+                this.setUser_DOB((String)updateItem.get("user_DOB"));
+            } else if ((updateItem.containsKey("user_DOB"))) {
+                System.out.println("Дата Рождения не может быть пустой");
+                throw new Exception();
+            }
+            System.out.println("Запись про пользователя обновлена на " + this.toString());
+            System.out.println();
+        } catch (Exception e) {
+                System.out.println("Исключение:" + e);
         }
-        if ((updateItem.containsKey("user_name")) && ((String)updateItem.get("user_name") != null)) {
-            this.setUser_name((String)updateItem.get("user_name"));
-        }
-        if ((updateItem.containsKey("user_surname")) && ((String)updateItem.get("user_surname") != null)) {
-            this.setUser_surname((String)updateItem.get("user_surname"));
-        }
-        if ((updateItem.containsKey("user_email")) && ((String)updateItem.get("user_email") != null)) {
-            this.setUser_email((String)updateItem.get("user_email"));
-        }
-        if ((updateItem.containsKey("user_gender")) && ((String)updateItem.get("user_gender") != null)) {
-            this.setUser_gender((String)updateItem.get("user_gender"));
-        }
-        if ((updateItem.containsKey("user_DOB")) && ((String)updateItem.get("user_DOB") != null)) {
-            this.setUser_DOB((String)updateItem.get("user_DOB"));
-        }
-        System.out.println("Запись про пользователя обновлена на " + this.toString());
-        System.out.println();
     }
 }

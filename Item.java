@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 public class Item implements Create, Delete, Update, Read {
     private long id;
@@ -165,18 +166,34 @@ public class Item implements Create, Delete, Update, Read {
 
     @Override
     public void update(HashMap<String, Object> updateItem){
-        if ((updateItem.containsKey("id")) && ((long)updateItem.get("id") > 0)) {
-            this.setId((long)updateItem.get("id"));
+        try {
+            if ((updateItem.containsKey("id")) && ((long)updateItem.get("id") > 0)) {
+                this.setId((long)updateItem.get("id"));
+            } else if ((updateItem.containsKey("id"))) {
+                System.out.println("ID не может быть отрицательным");
+                throw new Exception();
+            }
+            if ((updateItem.containsKey("name")) && (!Objects.equals((String) updateItem.get("name"), ""))) {
+                this.setName((String)updateItem.get("name"));
+            } else if (updateItem.containsKey("name")) {
+                System.out.println("NAME не может быть пустым");
+                throw new Exception();
+            }
+            if ((updateItem.containsKey("price")) && ((Double)updateItem.get("price") > 0)) {
+                this.setPrice((Double)updateItem.get("price"));
+            } else if (updateItem.containsKey("price")) {
+                System.out.println("PRICE не может быть меньше нуля");
+                throw new Exception();
+            }
+            if ((updateItem.containsKey("amount")) && ((long)updateItem.get("amount") > 0)) {
+                this.setAmount((long)updateItem.get("amount"));
+            } else if (updateItem.containsKey("amount")) {
+                System.out.println("AMOUNT не может быть меньше нуля");
+                throw new Exception();
+            }
+            System.out.println("Запись про товар обновлена на " + this.toString());
+        } catch (Exception e) {
+            System.out.println("Исключение:" + e);
         }
-        if ((updateItem.containsKey("name")) && ((String)updateItem.get("name") != null)) {
-            this.setName((String)updateItem.get("name"));
-        }
-        if ((updateItem.containsKey("price")) && ((Double)updateItem.get("price") > 0)) {
-            this.setPrice((Double)updateItem.get("price"));
-        }
-        if ((updateItem.containsKey("amount")) && ((long)updateItem.get("amount") > 0)) {
-            this.setAmount((long)updateItem.get("amount"));
-        }
-        System.out.println("Запись про товар обновлена на " + this.toString());
     }
 }

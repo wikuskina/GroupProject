@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class Catalog implements Create, Read, Update, Delete {
     private int id;
@@ -52,16 +53,20 @@ public class Catalog implements Create, Read, Update, Delete {
 
     @Override
     public void update(HashMap<String, Object> updateItem) {
-        if ((updateItem.containsKey("id")) && ((int)updateItem.get("id") > 0)) {
-            this.setId((int)updateItem.get("id"));
+        try {
+            if ((updateItem.containsKey("id")) && ((int)updateItem.get("id") > 0)) {
+                this.setId((int)updateItem.get("id"));
+            }
+            if ((updateItem.containsKey("name")) && (!Objects.equals((String) updateItem.get("name"), ""))) {
+                this.setName((String)updateItem.get("name"));
+            }
+            if ((updateItem.containsKey("catalogItems")) && (updateItem.get("catalogItems") != null)) {
+                this.setItems((ArrayList<String>)updateItem.get("catalogItems"));
+            }
+            System.out.println("Запись про товар обновлена на " + this.toString());
+        } catch (Exception e) {
+            System.out.println("Исключение:" + e);
         }
-        if ((updateItem.containsKey("name")) && ((String)updateItem.get("name") != null)) {
-            this.setName((String)updateItem.get("name"));
-        }
-        if ((updateItem.containsKey("catalogItems")) && (updateItem.get("catalogItems") != null)) {
-            this.setItems((ArrayList<String>)updateItem.get("catalogItems"));
-        }
-        System.out.println("Запись про товар обновлена на " + this.toString());
     }
 
     public void create() {

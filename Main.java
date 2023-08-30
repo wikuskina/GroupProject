@@ -261,7 +261,8 @@ public class Main {
         HashMap<String, Object> updateCatalog = new HashMap<String, Object>(){{
             put("id", (int)35);
             put("name", "Мячи");
-            put("catalogItems", new ArrayList<String>(List.of(ballYellow.getName(), ballRed.getName())));
+//            put("catalogItems", new ArrayList<String>(List.of(ballYellow.getName(), ballRed.getName())));
+            put("catalogItems", new ArrayList<String>(List.of()));
         }};
         balls.update(updateCatalog);
 
