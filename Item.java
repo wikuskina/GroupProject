@@ -172,8 +172,6 @@ public class Item implements Create, Delete, Update, Read {
             }
             if (name != null) {
                 throw new NullPointerException("Название не существует");
-            } else {
-
             }
             if (price != null) {
                 throw new NullPointerException("Цена не существует");

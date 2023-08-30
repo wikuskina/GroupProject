@@ -111,7 +111,7 @@ public class User implements Create, Read, Update, Delete {
 
     public void create() {
         try {
-            if (0 < user_id) {
+            if (0 > user_id) {
                 System.out.println("ID должен быть больше 0");
                 throw new IllegalArgumentException();
             }
@@ -150,7 +150,30 @@ public class User implements Create, Read, Update, Delete {
     }
 
     public void read() {
-        printToString();
+        try {
+            if (0 <= user_id) {
+                throw new NullPointerException("ID пользователя не существует");
+            }
+            if (user_name == null) {
+                throw new NullPointerException("Имя пользователя не существует");
+            }
+            if (user_surname == null) {
+                throw new NullPointerException("Фамилия пользователя не существует");
+            }
+            if (user_email == null) {
+                throw new NullPointerException("Email пользователя не существует");
+            }
+            if (user_gender == null) {
+                throw new NullPointerException("Пол пользователя не существует");
+            }
+            if (user_DOB == null) {
+                throw new NullPointerException("Дата рождения пользователя не существует");
+            }
+
+            printToString();
+        } catch (NullPointerException e) {
+            System.out.println("Ошибка при чтении информации о пользователе: " + e.getMessage());
+        }
     }
 
     @Override
