@@ -238,10 +238,10 @@ public class Main {
         // реализация update
         System.out.println("Начинаем изменение товара " + ballRed);
         HashMap<String, Object> updateItem = new HashMap<>(){{
-            put("id", (long)2);
+            put("id", (long) 2);
             put("name", "Мяч красно-синий");
             put("price", 15.0);
-            put("amount", (long)10);
+            put("amount", (long) 10);
         }};
         ballRed.update(updateItem);
 

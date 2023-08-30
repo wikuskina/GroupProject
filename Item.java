@@ -134,14 +134,34 @@ public class Item implements Create, Delete, Update, Read {
     }
     @Override
     public void create() {
-        // создание товара
-        System.out.println("Создание товара: " + name + " ID: " + id);
-        System.out.println();
-    }
+        try {
+            if (id <= 0) {
+                System.out.println("ID должен быть больше 0");
+                throw new IllegalArgumentException();
+            }
+            if (name.isEmpty()) {
+                System.out.println("Имя не может быть пустым");
+                throw new IllegalArgumentException();
+            }
+            if (price <= 0) {
+                System.out.println("Цена должна быть больше 0");
+                throw new IllegalArgumentException();
+            }
+            if (amount <= 0) {
+                System.out.println("Количество должно быть больше 0");
+                throw new IllegalArgumentException();
+            }
+            System.out.println("Создание товара: " + name + " ID: " + id + " цена:" + price + " количество:" + amount);
+            System.out.println();
+            } catch (Exception e) {
+                System.out.println("Ошибка при создании товара: " + e.getMessage());
+            }
+        }
+
     @Override
     public void delete() {
         // удаление товара
-        System.out.println("Товар " + getName() + " " + getId() + " успешно удален из каталога");
+        System.out.println("Товар " + getName() + " " + getId() + " " + getPrice() + " " + getAmount() + " успешно удален из каталога");
         System.out.println();
     }
 
