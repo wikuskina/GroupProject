@@ -135,7 +135,7 @@ public class Item implements Create, Delete, Update, Read {
     @Override
     public void create() {
         try {
-            if (id <= 0) {
+            if (id == 0) {
                 System.out.println("ID должен быть больше 0");
                 throw new IllegalArgumentException();
             }
@@ -143,11 +143,11 @@ public class Item implements Create, Delete, Update, Read {
                 System.out.println("Имя не может быть пустым");
                 throw new IllegalArgumentException();
             }
-            if (price <= 0) {
+            if (price == 0) {
                 System.out.println("Цена должна быть больше 0");
                 throw new IllegalArgumentException();
             }
-            if (amount <= 0) {
+            if (amount == 0) {
                 System.out.println("Количество должно быть больше 0");
                 throw new IllegalArgumentException();
             }
@@ -183,16 +183,16 @@ public class Item implements Create, Delete, Update, Read {
 
     public void read() {
         try {
-            if (0 != id) {
+            if (id == 0) {
                 throw new NullPointerException("ID не существует");
             }
-            if (name != null) {
+            if (name == null) {
                 throw new NullPointerException("Название не существует");
             }
-            if (price != null) {
+            if (price == null) {
                 throw new NullPointerException("Цена не существует");
             }
-            if (amount != 0) {
+            if (amount == 0) {
                 throw new NullPointerException("Данного количества не существует");
             }
             System.out.println("Информация о товаре:");
