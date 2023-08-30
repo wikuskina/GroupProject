@@ -110,8 +110,37 @@ public class User implements Create, Read, Update, Delete {
     }
 
     public void create() {
-        System.out.println("Добавление нового пользователя");
-        System.out.println();
+        try {
+            if (0 < user_id) {
+                System.out.println("ID должен быть больше 0");
+                throw new IllegalArgumentException();
+            }
+            if (user_name.isEmpty()) {
+                System.out.println("Имя не может быть пустым");
+                throw new IllegalArgumentException();
+            }
+            if (user_surname.isEmpty()) {
+                System.out.println("Фамилия не может быть пустой");
+                throw new IllegalArgumentException();
+            }
+            if (user_email.isEmpty()) {
+                System.out.println("Email не может быть пустым");
+                throw new IllegalArgumentException();
+            }
+            if (user_gender.isEmpty()) {
+                System.out.println("Пол не может быть пустым");
+                throw new IllegalArgumentException();
+            }
+            if (user_DOB.isEmpty()) {
+                System.out.println("Дата не может быть пустой");
+                throw new IllegalArgumentException();
+            }
+            System.out.println("Создание пользователя: ID: " + user_id + ", Имя, Фамилия - " + user_name + " " + user_surname
+                    + ", email - " + user_email + ", пол - " + user_gender + ", дата рождения - " + user_DOB);
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println("Ошибка при создании товара: " + e.getMessage());
+        }
     }
 
     public void delete() {
