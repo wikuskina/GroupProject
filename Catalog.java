@@ -94,10 +94,25 @@ public class Catalog implements Create, Read, Update, Delete {
 
     // reading info about catalog
     public void read() {
-        System.out.println("Информация о каталоге:");
-        System.out.println("Название: " + name);
-        System.out.println("ID: " + id);
-        System.out.println();
+        try {
+            if (0 <= id) {
+                throw new NullPointerException("ID не существует");
+            }
+            if (name == null) {
+                throw new NullPointerException("Название не существует");
+            }
+            if (catalogItems == null) {
+                throw new NullPointerException("Список предметов не существует");
+            }
+
+            System.out.println("Информация о каталоге:");
+            System.out.println("Название: " + name);
+            System.out.println("ID: " + id);
+            System.out.println();
+        } catch (NullPointerException e) {
+            System.out.println("Ошибка при чтении информации о каталоге: " + e.getMessage());
+        }
+
     }
 
     // clearning of catalog items
