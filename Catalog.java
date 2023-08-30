@@ -57,13 +57,13 @@ public class Catalog implements Create, Read, Update, Delete {
             if ((updateItem.containsKey("id")) && ((int)updateItem.get("id") > 0)) {
                 this.setId((int)updateItem.get("id"));
             }
-            if ((updateItem.containsKey("name")) && (!Objects.equals((String) updateItem.get("name"), ""))) {
+            if ((updateItem.containsKey("name")) && (!Objects.equals(updateItem.get("name"), ""))) {
                 this.setName((String)updateItem.get("name"));
             }
             if ((updateItem.containsKey("catalogItems")) && (updateItem.get("catalogItems") != null)) {
                 this.setItems((ArrayList<String>)updateItem.get("catalogItems"));
             }
-            System.out.println("Запись про товар обновлена на " + this.toString());
+            System.out.println("Запись про товар обновлена на " + this);
         } catch (Exception e) {
             System.out.println("Исключение:" + e);
         }

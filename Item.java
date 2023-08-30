@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Objects;
 
 public class Item implements Create, Delete, Update, Read {
@@ -173,7 +171,7 @@ public class Item implements Create, Delete, Update, Read {
                 System.out.println("ID не может быть отрицательным");
                 throw new Exception();
             }
-            if ((updateItem.containsKey("name")) && (!Objects.equals((String) updateItem.get("name"), ""))) {
+            if ((updateItem.containsKey("name")) && (!Objects.equals(updateItem.get("name"), ""))) {
                 this.setName((String)updateItem.get("name"));
             } else if (updateItem.containsKey("name")) {
                 System.out.println("NAME не может быть пустым");
@@ -191,7 +189,7 @@ public class Item implements Create, Delete, Update, Read {
                 System.out.println("AMOUNT не может быть меньше нуля");
                 throw new Exception();
             }
-            System.out.println("Запись про товар обновлена на " + this.toString());
+            System.out.println("Запись про товар обновлена на " + this);
         } catch (Exception e) {
             System.out.println("Исключение:" + e);
         }
