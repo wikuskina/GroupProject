@@ -166,14 +166,33 @@ public class Item implements Create, Delete, Update, Read {
     }
 
     public void read() {
-        // Вывод информации о товаре
-        System.out.println("Информация о товаре:");
-        System.out.println("Название: " + name);
-        System.out.println("ID: " + id);
-        System.out.println("Цена: " + price);
-        System.out.println("Количество: " + amount);
-        System.out.println();
+        try {
+            if (0 != id) {
+                throw new NullPointerException("ID не существует");
+            }
+            if (name != null) {
+                throw new NullPointerException("Название не существует");
+            } else {
+
+            }
+            if (price != null) {
+                throw new NullPointerException("Цена не существует");
+            }
+            if (amount != 0) {
+                throw new NullPointerException("Данного количества не существует");
+            }
+            System.out.println("Информация о товаре:");
+            System.out.println("Название: " + name);
+            System.out.println("ID: " + id);
+            System.out.println("Цена: " + price);
+            System.out.println("Количество: " + amount);
+            System.out.println();
+
+        } catch (NullPointerException e) {
+            System.out.println("Ошибка при чтении информации о товаре: " + e.getMessage());
+        }
     }
+
 
     @Override
     public String toString(){
