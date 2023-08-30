@@ -54,14 +54,14 @@ public class Catalog implements Create, Read, Update, Delete {
     @Override
     public void update(HashMap<String, Object> updateItem) {
         try {
-            if ((updateItem.containsKey("id")) && ((int)updateItem.get("id") > 0)) {
-                this.setId((int)updateItem.get("id"));
+            if ((updateItem.containsKey("id")) && ((int) updateItem.get("id") > 0)) {
+                this.setId((int) updateItem.get("id"));
             }
             if ((updateItem.containsKey("name")) && (!Objects.equals(updateItem.get("name"), ""))) {
-                this.setName((String)updateItem.get("name"));
+                this.setName((String) updateItem.get("name"));
             }
             if ((updateItem.containsKey("catalogItems")) && (updateItem.get("catalogItems") != null)) {
-                this.setItems((ArrayList<String>)updateItem.get("catalogItems"));
+                this.setItems((ArrayList<String>) updateItem.get("catalogItems"));
             }
             System.out.println("Запись про товар обновлена на " + this);
         } catch (Exception e) {
@@ -115,11 +115,25 @@ public class Catalog implements Create, Read, Update, Delete {
 
     }
 
-    // clearning of catalog items
+    // clearing of catalog items
     public void delete() {
-        catalogItems.clear(); // clear the list
-        System.out.println("Каталог " + getName() + " " + getId() + " успешно удален.");
-        System.out.println();
+        try {
+            if (getId() == 0) {
+                throw new NullPointerException("ID не существует");
+            }
+            if (getName() == null) {
+                throw new NullPointerException("Название не существует");
+            }
+            if (catalogItems == null) {
+                throw new NullPointerException("Список предметов не существует");
+            }
+
+            catalogItems.clear();
+            System.out.println("Каталог " + getName() + " " + getId() + " успешно удален.");
+            System.out.println();
+        } catch (NullPointerException e) {
+            System.out.println("Ошибка при удалении каталога: " + e.getMessage());
+        }
     }
 }
 
