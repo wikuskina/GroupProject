@@ -236,17 +236,17 @@ public class Main {
 
 
         // реализация update
-        System.out.println("Начинаем изменение товара " + ballRed.toString());
-        HashMap<String, Object> updateItem = new HashMap<String, Object>(){{
+        System.out.println("Начинаем изменение товара " + ballRed);
+        HashMap<String, Object> updateItem = new HashMap<>(){{
             put("id", (long)2);
             put("name", "Мяч красно-синий");
-            put("price", (Double)15.0);
+            put("price", 15.0);
             put("amount", (long)10);
         }};
         ballRed.update(updateItem);
 
-        System.out.println("Начинаем изменение пользователя - " + user1.toString());
-        HashMap<String, Object> updateUser = new HashMap<String, Object>(){{
+        System.out.println("Начинаем изменение пользователя - " + user1);
+        HashMap<String, Object> updateUser = new HashMap<>(){{
 //            put("user_id", (long)400);
 //            put("user_name", "Мария");
             put("user_surname", "Соколова");
@@ -257,9 +257,9 @@ public class Main {
         }};
         user1.update(updateUser);
 //
-        System.out.println("Начинаем изменение каталога " + balls.toString());
-        HashMap<String, Object> updateCatalog = new HashMap<String, Object>(){{
-            put("id", (int)35);
+        System.out.println("Начинаем изменение каталога " + balls);
+        HashMap<String, Object> updateCatalog = new HashMap<>(){{
+            put("id", 35);
             put("name", "Мячи");
 //            put("catalogItems", new ArrayList<String>(List.of(ballYellow.getName(), ballRed.getName())));
             put("catalogItems", new ArrayList<String>(List.of()));
