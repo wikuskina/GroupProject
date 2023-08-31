@@ -7,14 +7,24 @@ public class Catalog implements Create, Read, Update, Delete {
     private String name;
     public ArrayList<String> catalogItems; // добавила создание списка, поменяла доступ public
 
-    public Catalog(int id, String name, ArrayList<String> catalogItems) {
-        this.id = id;
-        this.name = name;
-        this.catalogItems = catalogItems;
-    }
-
     // пустой конструктор
-    public Catalog() {
+    public Catalog(){
+    }
+    // конструктор создания каталога
+    public Catalog(int id, String name, ArrayList<String> catalogItems) throws Exception{
+        // check if
+        if (id == 0) {
+            System.out.println("ID не может равнятся 0");
+            throw new Exception();
+        }
+        if (name.isEmpty()) {
+            System.out.println("Имя каталога не может быть пустым");
+            throw new Exception();
+        }
+        this.setId(id);
+        this.setName(name);
+        // Каталог может быть пустым - заполнится потом
+        this.catalogItems = catalogItems;
     }
 
     // геттеры и сеттеры
