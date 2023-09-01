@@ -60,6 +60,11 @@ public class Catalog implements Create, Read, Update, Delete {
                 ", catalogItems=" + catalogItems +
                 '}';
     }
+    public static class NotValidInformationException extends Exception {
+        public NotValidInformationException() {
+            super();
+        }
+    }
 
     @Override
     public void update(HashMap<String, Object> updateItem) {
@@ -81,23 +86,23 @@ public class Catalog implements Create, Read, Update, Delete {
 
     public void create() {
         try {
-            if (0 <= id) {
+            if (0 < id) {
                 System.out.println("ID не может быть отрицательным");
-                throw new IllegalArgumentException();
+                throw new NotValidInformationException();
             }
             if (name.isEmpty()) {
                 System.out.println("Имя не может быть пустым");
-                throw new IllegalArgumentException();
+                throw new NotValidInformationException();
             }
             if (catalogItems.isEmpty()) {
                 System.out.println("Каталог предметов не может быть пустым");
-                throw new IllegalArgumentException();
+                throw new NotValidInformationException();
             }
 
             System.out.println("Создание нового каталога: " + name + " ID: " + id);
             System.out.println("В каталоге " + name + " имеются следующие товары: " + catalogItems);
             System.out.println();
-        } catch (Exception e) {
+        } catch (NotValidInformationException e) {
             System.out.println("Ошибка при создании каталога: " + e.getMessage());
         }
     }
@@ -106,20 +111,23 @@ public class Catalog implements Create, Read, Update, Delete {
     public void read() {
         try {
             if (0 <= id) {
-                throw new NullPointerException("ID не существует");
+                System.out.println("Неверный ID");
+                throw new NotValidInformationException();
             }
             if (name == null) {
-                throw new NullPointerException("Название не существует");
+                System.out.println("Неверное имя");
+                throw new NotValidInformationException();
             }
             if (catalogItems == null) {
-                throw new NullPointerException("Список предметов не существует");
+                System.out.println("Неверный список предметов");
+                throw new NotValidInformationException();
             }
 
             System.out.println("Информация о каталоге:");
             System.out.println("Название: " + name);
             System.out.println("ID: " + id);
             System.out.println();
-        } catch (NullPointerException e) {
+        } catch (NotValidInformationException e) {
             System.out.println("Ошибка при чтении информации о каталоге: " + e.getMessage());
         }
 
@@ -129,19 +137,22 @@ public class Catalog implements Create, Read, Update, Delete {
     public void delete() {
         try {
             if (getId() == 0) {
-                throw new NullPointerException("ID не существует");
+                System.out.println("Неверный ID");
+                throw new NotValidInformationException();
             }
             if (getName() == null) {
-                throw new NullPointerException("Название не существует");
+                System.out.println("Неверное название");
+                throw new NotValidInformationException();
             }
             if (catalogItems == null) {
-                throw new NullPointerException("Список предметов не существует");
+                System.out.println("Неверный список предметов");
+                throw new NotValidInformationException();
             }
 
             catalogItems.clear();
             System.out.println("Каталог " + getName() + " " + getId() + " успешно удален.");
             System.out.println();
-        } catch (NullPointerException e) {
+        } catch (NotValidInformationException e) {
             System.out.println("Ошибка при удалении каталога: " + e.getMessage());
         }
     }

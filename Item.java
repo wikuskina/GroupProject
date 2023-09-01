@@ -124,6 +124,11 @@ public class Item implements Create, Delete, Update, Read {
     public long getAmount() {
         return amount;
     }
+    public static class NotValidInformationException extends Exception {
+        public NotValidInformationException() {
+            super();
+        }
+    }
 
     public void printItemInfo() {
         System.out.println("Название товара: " + this.getName());
@@ -137,23 +142,23 @@ public class Item implements Create, Delete, Update, Read {
         try {
             if (id == 0) {
                 System.out.println("ID должен быть больше 0");
-                throw new IllegalArgumentException();
+                throw new NotValidInformationException();
             }
             if (name.isEmpty()) {
                 System.out.println("Имя не может быть пустым");
-                throw new IllegalArgumentException();
+                throw new NotValidInformationException();
             }
             if (price == 0) {
                 System.out.println("Цена должна быть больше 0");
-                throw new IllegalArgumentException();
+                throw new NotValidInformationException();
             }
             if (amount == 0) {
                 System.out.println("Количество должно быть больше 0");
-                throw new IllegalArgumentException();
+                throw new NotValidInformationException();
             }
             System.out.println("Создание товара: " + name + " ID: " + id + " цена:" + price + " количество:" + amount);
             System.out.println();
-            } catch (Exception e) {
+            } catch (NotValidInformationException e) {
                 System.out.println("Ошибка при создании товара: " + e.getMessage());
             }
         }
@@ -162,21 +167,25 @@ public class Item implements Create, Delete, Update, Read {
     public void delete() {
         try {
             if (getId() == 0) {
-                throw new NullPointerException("ID не существует");
+                System.out.println("Неверный ID");
+                throw new NullPointerException();
             }
             if (getName() == null) {
-                throw new NullPointerException("Название не существует");
+                System.out.println("Неверное наименование");
+                throw new NotValidInformationException();
             }
             if (getPrice() == null) {
-                throw new NullPointerException("Цена не существует");
+                System.out.println("Неверная цена");
+                throw new NotValidInformationException();
             }
             if (getAmount() == 0) {
-                throw new NullPointerException("Количество не существует");
+                System.out.println("неверное количество");
+                throw new NotValidInformationException();
             }
 
             System.out.println("Товар " + getName() + " " + getId() + " " + getPrice() + " " + getAmount() + " успешно удален из каталога");
             System.out.println();
-        } catch (NullPointerException e) {
+        } catch (NotValidInformationException e) {
             System.out.println("Ошибка при удалении товара: " + e.getMessage());
         }
     }
@@ -184,16 +193,20 @@ public class Item implements Create, Delete, Update, Read {
     public void read() {
         try {
             if (id == 0) {
-                throw new NullPointerException("ID не существует");
+                System.out.println("Неверный ID");
+                throw new NotValidInformationException();
             }
             if (name == null) {
-                throw new NullPointerException("Название не существует");
+                System.out.println("Неверное наименование");
+                throw new NotValidInformationException();
             }
             if (price == null) {
-                throw new NullPointerException("Цена не существует");
+                System.out.println("Неверная цена");
+                throw new NotValidInformationException();
             }
             if (amount == 0) {
-                throw new NullPointerException("Данного количества не существует");
+                System.out.println("Неверное количество");
+                throw new NotValidInformationException();
             }
             System.out.println("Информация о товаре:");
             System.out.println("Название: " + name);
@@ -202,14 +215,14 @@ public class Item implements Create, Delete, Update, Read {
             System.out.println("Количество: " + amount);
             System.out.println();
 
-        } catch (NullPointerException e) {
+        } catch (NotValidInformationException e) {
             System.out.println("Ошибка при чтении информации о товаре: " + e.getMessage());
         }
     }
 
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Название товара: " + this.getName() + "\nID: " + this.getId() +
                 "\nЦена: " + this.getPrice() + "\nКоличество на складе: " +
                 this.getAmount();

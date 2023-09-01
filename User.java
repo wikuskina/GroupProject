@@ -109,36 +109,42 @@ public class User implements Create, Read, Update, Delete {
                 '}';
     }
 
+    public static class NotValidInformationException extends Exception {
+        public NotValidInformationException() {
+            super();
+        }
+    }
+
     public void create() {
         try {
             if (user_id == 0) {
                 System.out.println("ID должен быть больше 0");
-                throw new IllegalArgumentException();
+                throw new NotValidInformationException();
             }
             if (user_name.isEmpty()) {
                 System.out.println("Имя не может быть пустым");
-                throw new IllegalArgumentException();
+                throw new NotValidInformationException();
             }
             if (user_surname.isEmpty()) {
                 System.out.println("Фамилия не может быть пустой");
-                throw new IllegalArgumentException();
+                throw new NotValidInformationException();
             }
             if (user_email.isEmpty()) {
                 System.out.println("Email не может быть пустым");
-                throw new IllegalArgumentException();
+                throw new NotValidInformationException();
             }
             if (user_gender.isEmpty()) {
                 System.out.println("Пол не может быть пустым");
-                throw new IllegalArgumentException();
+                throw new NotValidInformationException();
             }
             if (user_DOB.isEmpty()) {
                 System.out.println("Дата не может быть пустой");
-                throw new IllegalArgumentException();
+                throw new NotValidInformationException();
             }
             System.out.println("Создание пользователя: ID: " + user_id + ", Имя, Фамилия - " + user_name + " " + user_surname
                     + ", email - " + user_email + ", пол - " + user_gender + ", дата рождения - " + user_DOB);
             System.out.println();
-        } catch (Exception e) {
+        } catch (NotValidInformationException e) {
             System.out.println("Ошибка при создании товара: " + e.getMessage());
         }
     }
@@ -146,54 +152,66 @@ public class User implements Create, Read, Update, Delete {
     public void delete() {
         try {
             if (user_id == 0) {
-                throw new NullPointerException("ID пользователя не существует");
+                System.out.println("Неверный ID");
+                throw new NotValidInformationException();
             }
             if (user_name == null) {
-                throw new NullPointerException("Имя пользователя не существует");
+                System.out.println("Неверное имя");
+                throw new NotValidInformationException();
             }
             if (user_surname == null) {
-                throw new NullPointerException("Фамилия пользователя не существует");
+                System.out.println("Невернвя фамилия");
+                throw new NotValidInformationException();
             }
             if (user_email == null) {
-                throw new NullPointerException("Email пользователя не существует");
+                System.out.println("Неверный email");
+                throw new NotValidInformationException();
             }
             if (user_gender == null) {
-                throw new NullPointerException("Пол пользователя не существует");
+                System.out.println("Неверный пол");
+                throw new NotValidInformationException();
             }
             if (user_DOB == null) {
-                throw new NullPointerException("Дата рождения пользователя не существует");
+                System.out.println("Неверная дата рождения");
+                throw new NotValidInformationException();
             }
 
             System.out.println("Пользователь " + user_name + " " + user_surname + " по ID: " + user_id + " успешно удален.");
             System.out.println();
-        } catch (NullPointerException e) {
+        } catch (NotValidInformationException e) {
             System.out.println("Ошибка при удалении пользователя: " + e.getMessage());
         }
     }
 
         public void read() {
         try {
-            if (0 == user_id) {
-                throw new NullPointerException("ID пользователя не существует");
+            if (user_id == 0) {
+                System.out.println("Неверный ID");
+                throw new NotValidInformationException();
             }
             if (user_name == null) {
-                throw new NullPointerException("Имя пользователя не существует");
+                System.out.println("Неверное имя");
+                throw new NotValidInformationException();
             }
             if (user_surname == null) {
-                throw new NullPointerException("Фамилия пользователя не существует");
+                System.out.println("Невернвя фамилия");
+                throw new NotValidInformationException();
             }
             if (user_email == null) {
-                throw new NullPointerException("Email пользователя не существует");
+                System.out.println("Неверный email");
+                throw new NotValidInformationException();
             }
             if (user_gender == null) {
-                throw new NullPointerException("Пол пользователя не существует");
+                System.out.println("Неверный пол");
+                throw new NotValidInformationException();
             }
             if (user_DOB == null) {
-                throw new NullPointerException("Дата рождения пользователя не существует");
+                System.out.println("Неверная дата рождения");
+                throw new NotValidInformationException();
             }
 
             printToString();
-        } catch (NullPointerException e) {
+        } catch (NotValidInformationException e) {
             System.out.println("Ошибка при чтении информации о пользователе: " + e.getMessage());
         }
     }
