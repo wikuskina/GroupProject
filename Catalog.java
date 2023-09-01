@@ -86,7 +86,7 @@ public class Catalog implements Create, Read, Update, Delete {
 
     public void create() {
         try {
-            if (0 < id) {
+            if (0 == id) {
                 System.out.println("ID не может быть отрицательным");
                 throw new NotValidInformationException();
             }
@@ -110,7 +110,7 @@ public class Catalog implements Create, Read, Update, Delete {
     // reading info about catalog
     public void read() {
         try {
-            if (0 <= id) {
+            if (id == 0) {
                 System.out.println("Неверный ID");
                 throw new NotValidInformationException();
             }

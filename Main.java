@@ -1,7 +1,7 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
+
 
 public class Main {
 
@@ -145,15 +145,15 @@ public class Main {
         constructorVeryHard.printItemInfo();
 
         // 5 users
-        User user1 = new User(400, "Мария", "Савельева", "maria.savelieva@gmail.com", "женский", "15.06.2000");
+        User user1 = new User(111111, 400, "Мария", "Савельева", "maria.savelieva@gmail.com", "женский", "15.06.2000");
         user1.printToString();
-        User user2 = new User(401, "Елена", "Иванова", "elena.ivanove@gmail.com", "женский", "14.01.1998");
+        User user2 = new User(222222, 401, "Елена", "Иванова", "elena.ivanove@gmail.com", "женский", "14.01.1998");
         user2.printToString();
-        User user3 = new User(402, "Игорь", "Молев", "igor.molev@gmail.com", "мужской", "11.12.1991");
+        User user3 = new User(333333, 402, "Игорь", "Молев", "igor.molev@gmail.com", "мужской", "11.12.1991");
         user3.printToString();
-        User user4 = new User(403, "Мелисса", "Белова", "melissa.white@gmail.com", "женский", "25.08.1983");
+        User user4 = new User(444444, 403, "Мелисса", "Белова", "melissa.white@gmail.com", "женский", "25.08.1983");
         user4.printToString();
-        User user5 = new User(404, "Иван", "Черных", "ivan.black@gmail.com", "мужской", "08.07.2005");
+        User user5 = new User(555555, 404, "Иван", "Черных", "ivan.black@gmail.com", "мужской", "08.07.2005");
         user5.printToString();
 
         // List of all users
@@ -176,8 +176,6 @@ public class Main {
         ballBlack.read();
         ballGreen.read();
 
-        // UPDATE method for Items
-        // ballWhite.update();
 
         // DELETE method for Items - deleting any item
         ballWhite.delete();
@@ -186,7 +184,7 @@ public class Main {
 
         // CRUD methods for Users
         // CREATE method for Users
-        User user6 = new User(405, "Александр", "Пушкин", "alex.pushkin@mail.ru", "мужской", "06.07.1799");
+        User user6 = new User(666666, 405, "Александр", "Пушкин", "alex.pushkin@mail.ru", "мужской", "06.07.1799");
         user6.create();
         allUsers.add(user6); // adding to list of users
         user6.printToString();
@@ -195,9 +193,6 @@ public class Main {
         // READ method for Users
         user1.read();
 
-        // UPDATE method for Users
-        //user1.update();
-
         // DELETE methods for Users
         user6.delete();
         allUsers.remove(user6);
@@ -205,10 +200,10 @@ public class Main {
         // CRUD methods for Catalog
         // CREATE methods for Catalog
         // Creating new items (books) and new catalog for it
-        Item book1 = new Item(199, "Марк Твен — Приключения Тома Сойера", 10.0, 25);
-        Item book2 = new Item(200, "Голдинг Уильям - Повелитель мух", 10.0, 15);
-        Item book3 = new Item(201, "Андерсен — Сказки", 10.0, 20);
-        ArrayList<String> CatalogBooks= new ArrayList<>();
+        Item book1 = new Item(200, "Марк Твен — Приключения Тома Сойера", 10.0, 25);
+        Item book2 = new Item(201, "Голдинг Уильям - Повелитель мух", 10.0, 15);
+        Item book3 = new Item(202, "Андерсен — Сказки", 10.0, 20);
+        ArrayList<String> CatalogBooks = new ArrayList<>();
         CatalogBooks.add(book1.getName()); // adding new items to the list
         CatalogBooks.add(book2.getName());
         CatalogBooks.add(book3.getName());
@@ -218,9 +213,6 @@ public class Main {
         // READ methods for Catalog
         books.read();
         balls.read();
-
-        // UPDATE method for Catalog
-        //books.update();
 
         // DELETE methods for Catalog
         books.delete();
@@ -237,7 +229,7 @@ public class Main {
 
         // реализация update
         System.out.println("Начинаем изменение товара " + ballRed);
-        HashMap<String, Object> updateItem = new HashMap<>(){{
+        HashMap<String, Object> updateItem = new HashMap<>() {{
             put("id", (long) 2);
             put("name", "Мяч красно-синий");
             put("price", 15.0);
@@ -246,7 +238,7 @@ public class Main {
         ballRed.update(updateItem);
 
         System.out.println("Начинаем изменение пользователя - " + user1);
-        HashMap<String, Object> updateUser = new HashMap<>(){{
+        HashMap<String, Object> updateUser = new HashMap<>() {{
 //            put("user_id", (long)400);
 //            put("user_name", "Мария");
             put("user_surname", "Соколова");
@@ -258,7 +250,7 @@ public class Main {
         user1.update(updateUser);
 //
         System.out.println("Начинаем изменение каталога " + balls);
-        HashMap<String, Object> updateCatalog = new HashMap<>(){{
+        HashMap<String, Object> updateCatalog = new HashMap<>() {{
             put("id", 35);
             put("name", "Мячи");
 //            put("catalogItems", new ArrayList<String>(List.of(ballYellow.getName(), ballRed.getName())));
@@ -266,6 +258,25 @@ public class Main {
         }};
         balls.update(updateCatalog);
 
+        // HashMap for Users and add it to file Users.txt
+        HashMap<Integer, User> userMap = new HashMap<>();
+        for (User user : allUsers) {
+            userMap.put(user.getUser_PassportNumber(), user);
+        }
+        try (FileWriter writer = new FileWriter("/Users/valeriapodezva/IdeaProjects/cats_project/resources/users.txt")) {
+            userMap.values().stream()
+                    .map(user -> user.getUser_PassportNumber() + "_" + user.getUser_name())
+                    .forEach(userData -> {
+                        try {
+                            writer.write(userData + "\n");
+                        } catch (IOException e) {
+                            System.out.println("Ошибка при записи в файл: " + e.getMessage());
+                        }
+                    });
+            System.out.println("Данные успешно записаны в файл.");
+        } catch (IOException e) {
+            System.out.println("Ошибка при записи в файл: " + e.getMessage());
+        }
     }
 
 }

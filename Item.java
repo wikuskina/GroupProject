@@ -148,11 +148,11 @@ public class Item implements Create, Delete, Update, Read {
                 System.out.println("Имя не может быть пустым");
                 throw new NotValidInformationException();
             }
-            if (price == 0) {
+            if (price < 0) {
                 System.out.println("Цена должна быть больше 0");
                 throw new NotValidInformationException();
             }
-            if (amount == 0) {
+            if (amount < 0) {
                 System.out.println("Количество должно быть больше 0");
                 throw new NotValidInformationException();
             }

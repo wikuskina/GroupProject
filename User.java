@@ -16,12 +16,16 @@ public class User implements Create, Read, Update, Delete {
 
     String user_DOB;
 
+    int passportNumber;
+
+
     // Constructor empty
     public User() {
     }
 
     // Constructor non-empty
-    public User(long user_id, String user_name, String user_surname, String user_email, String user_gender, String user_DOB) {
+    public User(int passportNumber, long user_id, String user_name, String user_surname, String user_email, String user_gender, String user_DOB) {
+        this.passportNumber = passportNumber;
         this.user_id = user_id;
         this.user_name = user_name;
         this.user_surname = user_surname;
@@ -73,6 +77,10 @@ public class User implements Create, Read, Update, Delete {
     }
 
     // Getter methods: to return the value
+    public int getUser_PassportNumber() {
+        return passportNumber;
+    }
+
     public long getUser_id() {
         return user_id;
     }
