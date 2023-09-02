@@ -37,6 +37,19 @@ public class User implements Create, Read, Update, Delete {
     public User(int passportNumber, String userDatum, String userDatum1, String userDatum2, String userDatum3, String userDatum4, String userDatum5) {
     }
 
+    public User(long user_id, String user_name, String user_surname, String user_email, String user_gender, String user_DOB, int passportNumber) {
+        this.user_id = user_id;
+        this.user_name = user_name;
+        this.user_surname = user_surname;
+        this.user_email = user_email;
+        this.user_gender = user_gender;
+        this.user_DOB = user_DOB;
+        this.passportNumber = passportNumber;
+    }
+
+    public static void addUser(User newUser) {
+    }
+
     // Output user to string
     public void printToString() {
         String str = "Пользаватель: ";
