@@ -285,17 +285,14 @@ public class Main {
         // чтение данных из файла и запись в поле сущности User
         ArrayList<User> users = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader("./resources/users.txt"))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] userData = line.split("_");
-                int passportNumber = 0;
-                if (userData.length == 7) {
-                    passportNumber = Integer.parseInt(userData[0]);
-                }
-
-                User user = new User(passportNumber, userData[1], userData[2], userData[3], userData[4], userData[5], userData[6]);
-                users.add(user);
-            }
+            reader.lines()
+                    .map(line -> line.split("_"))
+                    .filter(userData -> userData.length == 7)
+                    .forEach(userData -> {
+                        int passportNumber = Integer.parseInt(userData[0]);
+                        User user = new User(passportNumber, userData[1], userData[2], userData[3], userData[4], userData[5], userData[6]);
+                        users.add(user);
+                    });
             System.out.println("Данные успешно прочитаны из файла и записаны в поле сущности User.");
         } catch (IOException e) {
             System.out.println("Ошибка при чтении из файла: " + e.getMessage());
