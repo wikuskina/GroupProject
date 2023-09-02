@@ -34,6 +34,9 @@ public class User implements Create, Read, Update, Delete {
         this.user_DOB = user_DOB;
     }
 
+    public User(int passportNumber, String userDatum, String userDatum1, String userDatum2, String userDatum3, String userDatum4, String userDatum5) {
+    }
+
     // Output user to string
     public void printToString() {
         String str = "Пользаватель: ";
