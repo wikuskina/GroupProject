@@ -63,6 +63,47 @@ public class Main {
         allItems.add(constructorHard);
         allItems.add(constructorVeryHard);
 
+        // список всех предметов (item) в тестовом списке для реализации через Storage class
+        // добавление предметов
+        ArrayList<Object> allItemsTest = new ArrayList<>();
+        Storage storage1 = new Storage(allItemsTest);
+        storage1.addElement(ballRed);
+        storage1.addElement(ballBlue);
+        storage1.addElement(ballWhite);
+        storage1.addElement(ballGreen);
+        storage1.addElement(ballBlack);
+        storage1.addElement(dollBarbie);
+        storage1.addElement(dollCandy);
+        storage1.addElement(dollMary);
+        storage1.addElement(dollKim);
+        storage1.addElement(dollNina);
+        storage1.addElement(puzzle5);
+        storage1.addElement(puzzle4);
+        storage1.addElement(puzzle3);
+        storage1.addElement(puzzle2);
+        storage1.addElement(puzzle1);
+        storage1.addElement(carGreen);
+        storage1.addElement(carBlack);
+        storage1.addElement(carYellow);
+        storage1.addElement(carPink);
+        storage1.addElement(carPurple);
+        storage1.addElement(constructorVeryEasy);
+        storage1.addElement(constructorEasy);
+        storage1.addElement(constructorMedium);
+        storage1.addElement(constructorHard);
+        storage1.addElement(constructorVeryHard);
+        storage1.addElement(constructorEasy);
+        // вывод предметов в консоль - comment out, протестировано
+        // System.out.println("Список всех товаров добавленный в Storage class: " + storage1.getStorageList());
+        // метод read через Storage class для Items
+        storage1.read();
+        System.out.println();
+
+        // метод delete через Storage class для Items
+        storage1.delete();
+        // System.out.println(storage1); // test что точно очистился список
+        System.out.println();
+
         // Item lists by catalog (items added by type into each catalog)
         // Balls
         ArrayList<String> CatalogBalls = new ArrayList<>();
@@ -226,6 +267,7 @@ public class Main {
             Item randomItem = allItems.get(choices.nextInt(allItems.size()));
             System.out.println("Пользователь " + randomUser.getUser_name() + " " + randomUser.getUser_surname()
                     + " положил/a в корзину следующий товар: " + randomItem.getName() + ", ID товара: " + randomItem.getId());
+        System.out.println();
         }
 
 
@@ -238,6 +280,7 @@ public class Main {
             put("amount", (long) 10);
         }};
         ballRed.update(updateItem);
+        System.out.println();
 
         System.out.println("Начинаем изменение пользователя - " + user1);
         HashMap<String, Object> updateUser = new HashMap<>() {{

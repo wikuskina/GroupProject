@@ -52,7 +52,7 @@ public class User implements Create, Read, Update, Delete {
 
     // Output user to string
     public void printToString() {
-        String str = "Пользаватель: ";
+        String str = "Пользователь: ";
         str += "id " + this.getUser_id() + ", Имя, Фамилия - " + this.getUser_name() + " " + this.getUser_surname();
         // check if some fields are not empty
         if (!this.getUser_email().isEmpty()) {
