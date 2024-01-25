@@ -24,10 +24,10 @@ A sample database (not yet a real database) for the store, which consists of the
 <br>
 In the Main class, instances of these classes are created and filled with information 5 each. <br>
 <br>
-Information about users is displayed the console. <br>
+Information about users is displayed to the console. <br>
 <br>
-Each entity has its own CRUD methods. <br>
-CRUD operations are methods: <br>
+Each entity has its own CRUD methods: <br>
+<br>
 CREATE - method allows to create a new user, product or catalog section in the database. <br>
 READ - method allows to find an already existing entity (user, product or catalog section) by id and displays information about it. <br>
 UPDATE - method allows to change information about a product, user or catalog section, by id. <br>
