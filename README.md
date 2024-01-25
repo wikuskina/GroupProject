@@ -1,4 +1,4 @@
-# Online toy store group project project, learning Java.
+# Online toy store group project, learning Java.
 A sample database (not yet a real database) for the store, which consists of the following entities: <br>
 - User <br>
 - Product <br>
