@@ -1,5 +1,5 @@
-# Online toy store project, group project, learning Java.
-For each online store, we created a sample database (not yet a real database), which consists of the following entities: <br>
+# Online toy store group project project, learning Java.
+A sample database (not yet a real database) for the store, which consists of the following entities: <br>
 - User <br>
 - Product <br>
 - Catalog <br>
