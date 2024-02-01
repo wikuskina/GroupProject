@@ -1,6 +1,4 @@
-# Online toy store group project in Java
-
-Group project with @Lerocean and @ekaterina-pa
+# Online shop - group project in Java
 
 A sample database for online store was created. It consists of the following entities: <br>
 - User <br>
