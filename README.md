@@ -26,7 +26,6 @@ A sample database for online store was created. It consists of the following ent
 - Products (stored as ArrayList<Product> products); (toys) <br>
 <br>
 In the Main class, instances of classes are created and filled with information, 5 each. <br>
-<br>
 Information is also displayed to the console. <br>
 <br>
 Each entity has its own CRUD methods: <br>
