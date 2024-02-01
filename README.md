@@ -1,5 +1,8 @@
-# Online toy store group project, learning Java.
-A sample database (not yet a real database) for the store, which consists of the following entities: <br>
+# Online toy store group project in Java
+
+Group project with @Lerocean and @ekaterina-pa
+
+A sample database for online store was created. It consists of the following entities: <br>
 - User <br>
 - Product <br>
 - Catalog <br>
@@ -22,9 +25,9 @@ A sample database (not yet a real database) for the store, which consists of the
 - Catalog name; (name) <br>
 - Products (stored as ArrayList<Product> products); (toys) <br>
 <br>
-In the Main class, instances of these classes are created and filled with information 5 each. <br>
+In the Main class, instances of classes are created and filled with information, 5 each. <br>
 <br>
-Information about users is displayed to the console. <br>
+Information is also displayed to the console. <br>
 <br>
 Each entity has its own CRUD methods: <br>
 <br>
